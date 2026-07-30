@@ -1,0 +1,692 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Oral Health Awareness - Dental Clinic Ethiopia</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --white: #FFFFFF;
+            --light-blue: #5BBEF7;
+            --very-light-blue: #F4FBFF;
+            --dark-blue: #1B4F8C;
+            --body-text: #2C3E50;
+        }
+
+        body {
+            font-family: 'Inter', 'Segoe UI', system-ui, -apple-system, sans-serif;
+            line-height: 1.7;
+            color: var(--body-text);
+            background: var(--white);
+            overflow-x: hidden;
+        }
+
+        .site-header {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1.25rem 5%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1rem;
+            background: rgba(255,255,255,0.92);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(91, 190, 247, 0.14);
+            position: sticky;
+            top: 0;
+            z-index: 10;
+        }
+
+        .brand-link {
+            color: var(--dark-blue);
+            font-size: 1rem;
+            font-weight: 700;
+            text-decoration: none;
+        }
+
+        .site-nav {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .site-nav a {
+            color: var(--dark-blue);
+            text-decoration: none;
+            font-weight: 600;
+            padding: 0.7rem 1rem;
+            border-radius: 999px;
+            transition: background 0.25s ease, color 0.25s ease;
+        }
+
+        .site-nav a:hover,
+        .site-nav a.active {
+            background: rgba(91, 190, 247, 0.14);
+            color: var(--light-blue);
+        }
+
+        .awareness-page {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 5%;
+        }
+
+        
+        .section {
+            padding: 5rem 0;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 3.5rem;
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 0.5rem 1.25rem;
+            background: var(--very-light-blue);
+            color: var(--light-blue);
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            margin-bottom: 1.25rem;
+            border: 1px solid rgba(91, 190, 247, 0.2);
+        }
+
+        .section-title {
+            font-size: clamp(2rem, 4vw, 3rem);
+            font-weight: 700;
+            color: var(--dark-blue);
+            line-height: 1.2;
+            margin-bottom: 1rem;
+        }
+
+        .section-subtitle {
+            font-size: 1.1rem;
+            color: var(--body-text);
+            max-width: 700px;
+            margin: 0 auto;
+            line-height: 1.8;
+            opacity: 0.85;
+        }
+
+        
+        .video-insights {
+            display: grid;
+            grid-template-columns: 1.2fr 1fr;
+            gap: 3rem;
+            align-items: start;
+        }
+
+        .video-container {
+            position: relative;
+            width: 100%;
+            padding-bottom: 56.25%;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 20px 60px rgba(27, 79, 140, 0.15);
+            background: var(--very-light-blue);
+            border: 1px solid rgba(91, 190, 247, 0.2);
+        }
+
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        .video-caption {
+            font-size: 0.9rem;
+            color: var(--body-text);
+            margin-top: 1rem;
+            opacity: 0.8;
+            font-style: italic;
+        }
+
+        .insights-list {
+            display: flex;
+            flex-direction: column;
+            gap: 1.75rem;
+        }
+
+        .insight-item {
+            display: flex;
+            gap: 1.25rem;
+            padding: 1.5rem;
+            background: var(--very-light-blue);
+            border-radius: 16px;
+            border: 1px solid rgba(91, 190, 247, 0.15);
+            transition: all 0.3s ease;
+        }
+
+        .insight-item:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(91, 190, 247, 0.12);
+            border-color: rgba(91, 190, 247, 0.3);
+        }
+
+        .insight-number {
+            flex-shrink: 0;
+            width: 40px;
+            height: 40px;
+            background: var(--light-blue);
+            color: var(--white);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 1rem;
+            box-shadow: 0 4px 12px rgba(91, 190, 247, 0.3);
+        }
+
+        .insight-content h4 {
+            color: var(--dark-blue);
+            font-size: 1.05rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .insight-content p {
+            font-size: 0.95rem;
+            line-height: 1.7;
+            opacity: 0.85;
+        }
+
+        
+        .pillars-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+        }
+
+        .pillar-card {
+            background: var(--white);
+            border-radius: 20px;
+            padding: 2.5rem 2rem;
+            text-align: center;
+            border: 1px solid rgba(91, 190, 247, 0.15);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .pillar-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, var(--light-blue), var(--dark-blue));
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .pillar-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 50px rgba(27, 79, 140, 0.1);
+            border-color: rgba(91, 190, 247, 0.3);
+        }
+
+        .pillar-card:hover::before {
+            opacity: 1;
+        }
+
+        .pillar-icon {
+            width: 70px;
+            height: 70px;
+            background: var(--very-light-blue);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem;
+            font-size: 2rem;
+            border: 1px solid rgba(91, 190, 247, 0.2);
+        }
+
+        .pillar-card h3 {
+            color: var(--dark-blue);
+            font-size: 1.2rem;
+            font-weight: 700;
+            margin-bottom: 0.75rem;
+        }
+
+        .pillar-card p {
+            font-size: 0.95rem;
+            line-height: 1.7;
+            opacity: 0.8;
+        }
+
+        
+        .cta-border-card {
+            background: var(--very-light-blue);
+            border: 2px solid var(--light-blue);
+            border-radius: 24px;
+            padding: 3.5rem 3rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-border-card::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(91, 190, 247, 0.08) 0%, transparent 70%);
+            pointer-events: none;
+        }
+
+        .cta-border-card h2 {
+            font-size: clamp(1.75rem, 3.5vw, 2.5rem);
+            color: var(--dark-blue);
+            font-weight: 700;
+            margin-bottom: 1rem;
+            position: relative;
+        }
+
+        .cta-border-card p {
+            font-size: 1.1rem;
+            color: var(--body-text);
+            max-width: 600px;
+            margin: 0 auto 2rem;
+            line-height: 1.8;
+            position: relative;
+        }
+
+        .cta-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            justify-content: center;
+            position: relative;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 0.95rem 2.5rem;
+            font-size: 1rem;
+            font-weight: 600;
+            text-decoration: none;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            border: 2px solid transparent;
+        }
+
+        .btn-primary {
+            background: var(--light-blue);
+            color: var(--white);
+            border-color: var(--light-blue);
+            box-shadow: 0 4px 20px rgba(91, 190, 247, 0.35);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 30px rgba(91, 190, 247, 0.5);
+            background: #4ab8f5;
+        }
+
+        .btn-secondary {
+            background: var(--white);
+            color: var(--light-blue);
+            border-color: var(--light-blue);
+        }
+
+        .btn-secondary:hover {
+            background: var(--light-blue);
+            color: var(--white);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(91, 190, 247, 0.3);
+        }
+
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .animate-on-scroll {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+
+        .animate-on-scroll.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        
+        .nav-spacer {
+            height: 80px;
+            background: var(--white);
+            border-bottom: 1px solid rgba(91, 190, 247, 0.1);
+        }
+
+        
+        @media (max-width: 968px) {
+            .video-insights {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .pillars-grid {
+                grid-template-columns: 1fr;
+                max-width: 500px;
+                margin: 0 auto;
+            }
+
+            .section {
+                padding: 3rem 0;
+            }
+
+            .cta-border-card {
+                padding: 2.5rem 1.5rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .btn {
+                width: 100%;
+                max-width: 300px;
+                text-align: center;
+            }
+        }
+
+        .direct-reach-card {
+            background: var(--very-light-blue);
+            border: 2px solid var(--light-blue);
+            border-radius: 24px;
+            padding: 3.5rem 3rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .direct-reach-card::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.6) 0%, transparent 70%);
+            pointer-events: none;
+        }
+
+        .reach-title {
+            font-size: clamp(1.5rem, 3vw, 2rem);
+            color: var(--dark-blue);
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            position: relative;
+        }
+
+        .reach-subtitle {
+            font-size: 1.25rem;
+            color: var(--dark-blue);
+            font-weight: 600;
+            margin-bottom: 0.75rem;
+            position: relative;
+        }
+
+        .reach-desc {
+            font-size: 1.1rem;
+            color: var(--body-text);
+            max-width: 600px;
+            margin: 0 auto 2rem;
+            line-height: 1.8;
+            position: relative;
+            opacity: 0.85;
+        }
+
+        .reach-buttons {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+            position: relative;
+        }
+
+        .reach-btn {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 1.5rem 1rem;
+            background: var(--white);
+            border: 2px solid var(--light-blue);
+            border-radius: 16px;
+            text-decoration: none;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: 0 4px 15px rgba(91, 190, 247, 0.1);
+        }
+
+        .reach-btn:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 30px rgba(91, 190, 247, 0.2);
+            border-color: var(--dark-blue);
+        }
+
+        .reach-btn-icon {
+            font-size: 1.75rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .reach-btn-label {
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: var(--dark-blue);
+            margin-bottom: 0.25rem;
+        }
+
+        .reach-btn-value {
+            font-size: 0.85rem;
+            color: var(--light-blue);
+            font-weight: 500;
+        }
+
+        .reach-btn-call .reach-btn-value {
+            color: var(--dark-blue);
+        }
+
+        .reach-btn-email {
+            background: var(--very-light-blue);
+        }
+
+        .reach-btn-email .reach-btn-label,
+        .reach-btn-email .reach-btn-value {
+            color: var(--dark-blue);
+        }
+
+        .reach-btn-tiktok .reach-btn-label,
+        .reach-btn-tiktok .reach-btn-value {
+            color: var(--dark-blue);
+        }
+
+        .reach-btn-tiktok:hover {
+            background: var(--very-light-blue);
+        }
+
+        @media (max-width: 968px) {
+            .reach-buttons {
+                grid-template-columns: 1fr;
+                max-width: 400px;
+                margin: 0 auto;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .direct-reach-card {
+                padding: 24px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="site-header">
+        <a href="index.html" class="brand-link">Peacock Dental</a>
+        <nav class="site-nav">
+            <a href="index.html">Home</a>
+            <a href="awareness.html" class="active">Awareness</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+    </header>
+
+    <div class="awareness-page">
+        
+        <section class="section">
+            <div class="section-header animate-on-scroll">
+                <span class="badge">✦ Patient Education & Awareness</span>
+                <h1 class="section-title">Understanding Your Smile:<br>Prevention Begins With Awareness</h1>
+                <p class="section-subtitle">
+                    Many dental conditions—like early tooth decay—develop silently. With regular checkups, timely intervention, and proper habits, you can protect your natural teeth and smile with total confidence.
+                </p>
+            </div>
+        </section>
+
+        
+        <section class="section">
+            <div class="video-insights">
+                <div class="animate-on-scroll">
+                    <div class="video-container">
+                        <iframe src="https://www.youtube.com/embed/cRWCHwt4_xQ" 
+                                title="Oral Health Awareness: Identifying and Fixing Early Tooth Decay" 
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                                allowfullscreen>
+                        </iframe>
+                    </div>
+                    <p class="video-caption">Oral Health Awareness: Identifying and Fixing Early Tooth Decay <a href="https://www.youtube.com/watch?v=cRWCHwt4_xQ&t=8" target="_blank" style="color: var(--light-blue);">[00:08]</a></p>
+                </div>
+
+                <div class="insights-list">
+                    <div class="insight-item animate-on-scroll">
+                        <div class="insight-number">1</div>
+                        <div class="insight-content">
+                            <h4>Early Signs Aren't Always Painful <a href="https://www.youtube.com/watch?v=cRWCHwt4_xQ&t=1" target="_blank" style="color: var(--light-blue); font-size: 0.85rem;">[00:01]</a></h4>
+                            <p>Small dark spots or subtle enamel changes are early signs of decay that often go unnoticed without a professional checkup.</p>
+                        </div>
+                    </div>
+
+                    <div class="insight-item animate-on-scroll">
+                        <div class="insight-number">2</div>
+                        <div class="insight-content">
+                            <h4>Restoring Everyday Confidence <a href="https://www.youtube.com/watch?v=cRWCHwt4_xQ&t=6" target="_blank" style="color: var(--light-blue); font-size: 0.85rem;">[00:06]</a></h4>
+                            <p>Visible dental issues frequently affect self-esteem, especially in children and young adults.</p>
+                        </div>
+                    </div>
+
+                    <div class="insight-item animate-on-scroll">
+                        <div class="insight-number">3</div>
+                        <div class="insight-content">
+                            <h4>Gentle, Effective Solutions <a href="https://www.youtube.com/watch?v=cRWCHwt4_xQ&t=15" target="_blank" style="color: var(--light-blue); font-size: 0.85rem;">[00:15]</a></h4>
+                            <p>Early detection allows dentists to apply minimally invasive treatments to restore teeth before severe damage occurs.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        
+        <section class="section">
+            <div class="section-header animate-on-scroll">
+                <span class="badge">✦ Prevention First</span>
+                <h2 class="section-title">Three Pillars of Preventive Care</h2>
+                <p class="section-subtitle">Building a lifetime of healthy smiles starts with these fundamental practices.</p>
+            </div>
+
+            <div class="pillars-grid">
+                <div class="pillar-card animate-on-scroll">
+                    <div class="pillar-icon">🔍</div>
+                    <h3>Early Detection & Screenings</h3>
+                    <p>Bi-Annual Routine Checkups. Professional exams identify enamel weakening and surface decay long before they turn into painful cavities or require complex procedures.</p>
+                </div>
+
+                <div class="pillar-card animate-on-scroll">
+                    <div class="pillar-icon">🪥</div>
+                    <h3>Daily Protective Habits</h3>
+                    <p>Home Routine Guidance. Brushing twice daily with fluoride toothpaste and flossing removes plaque biofilms that cause decay and gum inflammation.</p>
+                </div>
+
+                <div class="pillar-card animate-on-scroll">
+                    <div class="pillar-icon">💙</div>
+                    <h3>Personalized Care Plans</h3>
+                    <p>Tailored Treatments. Every mouth is unique. Custom preventative strategies help maintain natural tooth structure for a lifetime of healthy smiles.</p>
+                </div>
+            </div>
+        </section>
+
+        
+        <section class="section">
+            <div class="direct-reach-card animate-on-scroll">
+                <h2 class="reach-title">✦ DIRECT CLINIC REACH OUT</h2>
+                <p class="reach-subtitle">Have Questions or Ready to Visit Us?</p>
+                <p class="reach-desc">Get in touch directly with our reception team for inquiries and walk-in guidance.</p>
+                <div class="reach-buttons">
+                    <a href="tel:0981555000" class="reach-btn reach-btn-call">
+                        <span class="reach-btn-icon">📞</span>
+                        <span class="reach-btn-label">Call Reception</span>
+                        <span class="reach-btn-value">0981555000</span>
+                    </a>
+                    <a href="mailto:peacockDentalEthiopia@gmail.com" class="reach-btn reach-btn-email">
+                        <span class="reach-btn-icon">✉️</span>
+                        <span class="reach-btn-label">Send Email</span>
+                        <span class="reach-btn-value">peacockDentalEthiopia@gmail.com</span>
+                    </a>
+                    <a href="https://www.tiktok.com/@peacock" target="_blank" rel="noopener noreferrer" class="reach-btn reach-btn-tiktok">
+                        <span class="reach-btn-icon">🎵</span>
+                        <span class="reach-btn-label">TikTok</span>
+                        <span class="reach-btn-value">@peacock</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <script>
+        (function() {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            }, {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            });
+
+            document.querySelectorAll('.animate-on-scroll').forEach(el => {
+                observer.observe(el);
+            });
+        })();
+    </script>
+</body>
+</html>
