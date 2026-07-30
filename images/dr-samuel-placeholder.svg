@@ -1,0 +1,19 @@
+<svg width="600" height="600" viewBox="0 0 600 600" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Doctor portrait placeholder">
+  <defs>
+    <linearGradient id="faceGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f6fbff" />
+      <stop offset="100%" stop-color="#dbeefc" />
+    </linearGradient>
+  </defs>
+  <rect width="600" height="600" rx="34" fill="#eff7ff" />
+  <circle cx="300" cy="220" r="110" fill="url(#faceGrad)" />
+  <path d="M180 440 C180 340 240 280 300 280 C360 280 420 340 420 440 Z" fill="#d7efff" />
+  <path d="M260 200 Q260 180 280 180 Q300 180 300 200" fill="#1B4F8C" />
+  <path d="M320 200 Q320 180 340 180 Q360 180 360 200" fill="#1B4F8C" />
+  <circle cx="255" cy="210" r="12" fill="#1B4F8C" />
+  <circle cx="345" cy="210" r="12" fill="#1B4F8C" />
+  <path d="M240 250 Q300 290 360 250" stroke="#1B4F8C" stroke-width="10" fill="none" stroke-linecap="round" />
+  <path d="M180 440 C190 390 230 360 300 360 C370 360 410 390 420 440" fill="#b7d4ed" />
+  <rect x="130" y="460" width="340" height="80" rx="40" fill="#ffffff" opacity="0.9" />
+  <text x="300" y="550" text-anchor="middle" font-size="32" fill="#1B4F8C" font-family="Inter, Arial, sans-serif">Dr. Samuel</text>
+</svg>

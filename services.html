@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Services - Peacock Dental Ethiopia</title>
+    <link rel="icon" href="favicon.svg" />
+    <style>
+        :root {
+            --white: #ffffff;
+            --light-blue: #5bbef7;
+            --dark-blue: #1b4f8c;
+            --soft-blue: #eff8ff;
+            --surface: rgba(255,255,255,0.92);
+            --body-text: #2c3e50;
+            --muted: #5d7187;
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            color: var(--body-text);
+            background: linear-gradient(180deg, #f9fcff 0%, #ffffff 100%);
+            line-height: 1.7;
+            overflow-x: hidden;
+        }
+
+        .site-header {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1.25rem 5%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1rem;
+            background: rgba(255,255,255,0.96);
+            border-bottom: 1px solid rgba(91,190,247,0.14);
+            backdrop-filter: blur(12px);
+            position: sticky;
+            top: 0;
+            z-index: 10;
+        }
+
+        .brand-link {
+            color: var(--dark-blue);
+            font-weight: 700;
+            font-size: 1rem;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.8rem;
+        }
+
+        .brand-logo {
+            width: 38px;
+            height: 38px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .brand-logo img { width: 36px; height: 36px; display: block; }
+
+        .site-nav { display: flex; gap: 1rem; flex-wrap: wrap; }
+        .site-nav a {
+            color: var(--dark-blue);
+            text-decoration: none;
+            font-weight: 600;
+            padding: 0.7rem 1rem;
+            border-radius: 999px;
+            transition: background 0.25s ease, color 0.25s ease;
+        }
+        .site-nav a:hover,
+        .site-nav a.active { background: rgba(91,190,247,0.14); color: var(--light-blue); }
+
+        .hero { max-width: 1200px; margin: 2.5rem auto 1.5rem; padding: 0 5%; }
+        .hero-top { display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 2rem; align-items: center; }
+        .hero-copy { max-width: 640px; }
+        .hero-copy .eyebrow {
+            display: inline-flex;
+            padding: 0.55rem 1rem;
+            background: rgba(91,190,247,0.12);
+            border-radius: 999px;
+            color: var(--light-blue);
+            font-weight: 700;
+            margin-bottom: 1rem;
+            font-size: 0.9rem;
+        }
+
+        .hero-copy h1 {
+            font-size: clamp(2.25rem, 4vw, 3.5rem);
+            line-height: 1.05;
+            color: var(--dark-blue);
+            margin-bottom: 1rem;
+        }
+
+        .hero-copy p { color: var(--muted); font-size: 1rem; max-width: 580px; }
+
+        .service-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 5% 3rem;
+            display: grid;
+            grid-template-columns: repeat(3, minmax(220px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .service-card {
+            background: var(--surface);
+            border: 1px solid rgba(91,190,247,0.15);
+            border-radius: 24px;
+            padding: 2rem;
+            box-shadow: 0 18px 55px rgba(19,42,74,0.08);
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .service-card .service-icon {
+            width: 56px;
+            height: 56px;
+            border-radius: 18px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, rgba(91,190,247,0.18), rgba(91,190,247,0.05));
+            color: var(--light-blue);
+            font-size: 1.4rem;
+            box-shadow: inset 0 0 0 1px rgba(255,255,255,0.32);
+        }
+
+        .service-card h3 {
+            font-size: 1.25rem;
+            color: var(--dark-blue);
+            margin: 0;
+        }
+
+        .service-card p { color: var(--muted); line-height: 1.8; }
+
+        .service-card strong { color: var(--dark-blue); }
+
+        .service-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 24px 65px rgba(19,42,74,0.12);
+        }
+
+        .cta-section {
+            max-width: 1200px;
+            margin: 0 auto 3rem;
+            padding: 0 5%;
+        }
+
+        .cta-box {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1rem;
+            border: 1px solid rgba(91,190,247,0.18);
+            background: rgba(244,251,255,0.9);
+            border-radius: 24px;
+            padding: 2rem;
+            box-shadow: 0 18px 55px rgba(19,42,74,0.06);
+        }
+
+        .cta-box h2 { margin: 0; color: var(--dark-blue); font-size: clamp(1.5rem, 2vw, 2rem); }
+        .cta-box p { margin: 0; color: var(--muted); max-width: 700px; }
+        .cta-box .cta-actions { display: flex; gap: 1rem; flex-wrap: wrap; }
+        .btn { display: inline-flex; align-items: center; justify-content: center; min-width: 145px; padding: 0.95rem 1.5rem; border-radius: 999px; border: none; cursor: pointer; text-decoration: none; font-weight: 700; transition: transform 0.2s ease, box-shadow 0.2s ease; }
+        .btn-primary { background: var(--light-blue); color: #fff; box-shadow: 0 12px 30px rgba(91,190,247,0.28); }
+        .btn-secondary { background: #fff; color: var(--dark-blue); border: 1px solid rgba(91,190,247,0.18); }
+        .btn-primary:hover, .btn-secondary:hover { transform: translateY(-2px); }
+
+        @media(max-width: 980px) { .hero-top { grid-template-columns: 1fr; } .service-grid { grid-template-columns: 1fr 1fr; } }
+        @media(max-width: 680px) { .service-grid { grid-template-columns: 1fr; } .cta-box { flex-direction: column; align-items: flex-start; } }
+    </style>
+</head>
+<body>
+    <header class="site-header">
+        <a href="index.html" class="brand-link">
+            <span class="brand-logo"><img src="images/logo.jpg" alt="Peacock Dental logo" loading="lazy" /></span>
+            Peacock Dental
+        </a>
+        <nav class="site-nav">
+            <a href="index.html">Home</a>
+            <a href="awareness.html">Awareness</a>
+            <a href="services.html" class="active">Services</a>
+            <a href="our-doctor.html">Our Doctor</a>
+            <div class="nav-dropdown">
+                <button class="nav-link" aria-haspopup="true" aria-expanded="false">Contact ▾</button>
+                <div class="dropdown-menu" role="menu">
+                    <a href="contact.html">Contact & Location</a>
+                    <a href="contact.html#book">Book Appointment</a>
+                    <a href="tel:0981555000">Call Us</a>
+                    <a href="mailto:peacockDentalEthiopia@gmail.com">Send Message</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="hero">
+        <div class="hero-top">
+            <div class="hero-copy">
+                <span class="eyebrow">Comprehensive Dental Care</span>
+                <h1>Dental services built for comfort, confidence, and lasting results.</h1>
+                <p>Peacock Dental offers a complete range of modern dental care in Asosa, Ethiopia. Our services combine compassionate treatment, advanced technology, and skilled professionals so every visit becomes a smoother path to a healthier smile.</p>
+            </div>
+        </div>
+    </main>
+
+    <section class="service-grid">
+        <article class="service-card">
+            <div class="service-icon">🦷</div>
+            <h3>Preventive Care</h3>
+            <p>Routine exams, professional cleaning, fluoride protection, and patient education to keep your smile healthy and avoid future treatment.</p>
+        </article>
+        <article class="service-card">
+            <div class="service-icon">✨</div>
+            <h3>Cosmetic Dentistry</h3>
+            <p>Whitening, smile-enhancing restorations, and aesthetic consultation to help you achieve a brighter, confident smile.</p>
+        </article>
+        <article class="service-card">
+            <div class="service-icon">🛠️</div>
+            <h3>Restorative Care</h3>
+            <p>Fillings, crowns, bridges, and full-mouth rehabilitation designed to restore strength, function, and appearance.</p>
+        </article>
+        <article class="service-card">
+            <div class="service-icon">🦷</div>
+            <h3>Oral Surgery & Tooth Extraction</h3>
+            <p>Safe extraction, wisdom tooth removal, and surgical care with modern techniques and gentle post-operative support.</p>
+        </article>
+        <article class="service-card">
+            <div class="service-icon">🧩</div>
+            <h3>Orthodontic Support</h3>
+            <p>Braces guidance, aligner planning, and bite correction services to help patients of all ages achieve better alignment.</p>
+        </article>
+        <article class="service-card">
+            <div class="service-icon">🥼</div>
+            <h3>Pediatric & Family Dentistry</h3>
+            <p>Family-friendly dental care for children and adults, with a warm clinic atmosphere and easy appointment support.</p>
+        </article>
+    </section>
+
+    <section class="cta-section">
+        <div class="cta-box">
+            <div>
+                <h2>Ready for a healthy, confident smile?</h2>
+                <p>Book your appointment today or reach out with any questions. Our team is here to help you feel comfortable and informed from your first visit.</p>
+            </div>
+            <div class="cta-actions">
+                <a href="tel:0981555000" class="btn btn-primary">Call Now</a>
+                <a href="contact.html" class="btn btn-secondary">Contact Us</a>
+            </div>
+        </div>
+    </section>
+</body>
+</html>

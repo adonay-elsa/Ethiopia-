@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Our Doctor - Dr. Samuel Siyoum | Peacock Dental Ethiopia</title>
+    <link rel="icon" href="favicon.svg" />
+    <style>
+        :root{
+            --white:#fff; --light-blue:#F4FBFF; --accent:#5BBEF7; --dark:#1B4F8C; --text:#2C3E50;
+        }
+        *{box-sizing:border-box}
+        body{font-family:Inter,Segoe UI,system-ui; margin:0; color:var(--text); background:linear-gradient(180deg,#fbfdff, #ffffff);}
+        .site-header{max-width:1100px;margin:0 auto;padding:1.25rem 5%;display:flex;align-items:center;justify-content:space-between;background:transparent}
+        .brand-link{font-weight:700;color:var(--dark);text-decoration:none}
+        .container{max-width:1100px;margin:2.5rem auto;padding:0 5%}
+        .hero{display:grid;grid-template-columns:1fr 420px;gap:2.5rem;align-items:center}
+        .hero-card{background:rgba(255,255,255,0.95);border-radius:20px;padding:2rem;box-shadow:0 10px 40px rgba(0,0,0,0.06)}
+        h1{margin:0 0 0.5rem;font-size:1.9rem}
+        .sub{color:var(--accent);font-weight:700}
+        .portrait{border-radius:18px;overflow:hidden;box-shadow:0 12px 40px rgba(19,42,74,0.08);}
+        .site-nav a:focus, .nav-link:focus, .btn:focus { outline: 3px solid rgba(91,190,247,0.14); outline-offset:2px; }
+        .portrait img{display:block;width:100%;height:auto}
+        .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin-top:1.5rem}
+        .card{background:var(--white);padding:1rem;border-radius:12px;box-shadow:0 8px 30px rgba(19,42,74,0.06);text-align:center}
+        @media(max-width:880px){.hero{grid-template-columns:1fr;}.cards{grid-template-columns:repeat(2,1fr)}}
+    </style>
+</head>
+<body>
+    <header class="site-header">
+        <a href="index.html" class="brand-link">
+            <span class="brand-logo">
+                <img src="images/logo.jpg" alt="Peacock Dental logo" loading="lazy" />
+            </span>
+            Peacock Dental
+        </a>
+        <nav class="site-nav">
+            <a href="index.html">Home</a>
+            <a href="awareness.html">Awareness</a>
+            <a href="services.html">Services</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+    </header>
+
+    <main class="container">
+        <section class="hero">
+            <div class="hero-card">
+                <h1>Meet Our Distinguished Head Dentist</h1>
+                <div class="sub">Dr. Samuel Siyoum — Head Dentist</div>
+                <p style="margin-top:1rem;color:var(--text);line-height:1.7">Dr. Samuel Siyoum leads Peacock Dental Ethiopia with a commitment to ethical, patient-centered, and modern dental care. His approach combines clinical excellence, precision, and compassion, ensuring that every patient receives personalized treatment in a comfortable and welcoming environment.</p>
+                <p style="color:var(--text);line-height:1.7">Dedicated to continuous learning and the adoption of advanced dental technologies, he helps patients achieve healthy, confident smiles through preventive, restorative, and cosmetic dentistry.</p>
+
+                <div class="cards" aria-hidden="false">
+                    <div class="card">Patient-Centered Care</div>
+                    <div class="card">Advanced Clinical Expertise</div>
+                    <div class="card">Modern Dental Technology</div>
+                    <div class="card">Ethical Practice</div>
+                    <div class="card">Comfortable Treatment Experience</div>
+                    <div class="card">Continuous Professional Development</div>
+                </div>
+            </div>
+
+            <aside class="portrait">
+                <img src="images/dr-samuel.png" alt="Dr. Samuel Siyoum portrait" loading="lazy" width="420" />
+            </aside>
+        </section>
+    </main>
+</body>
+</html>

@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dental Clinic Ethiopia - Premium Dental Care</title>
+    <link rel="icon" href="favicon.svg" />
     <style>
         * {
             margin: 0;
@@ -45,6 +46,23 @@
             font-size: 1rem;
             font-weight: 700;
             text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.8rem;
+        }
+
+        .brand-logo {
+            width: 38px;
+            height: 38px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .brand-logo img {
+            width: 36px;
+            height: 36px;
+            display: block;
         }
 
         .site-nav {
@@ -52,6 +70,47 @@
             gap: 1rem;
             flex-wrap: wrap;
         }
+
+        .nav-dropdown {
+            position: relative;
+        }
+
+        .nav-dropdown .nav-link {
+            background: transparent;
+            border: none;
+            color: var(--dark-blue);
+            font-weight: 600;
+            padding: 0.7rem 1rem;
+            border-radius: 999px;
+            cursor: pointer;
+        }
+
+        .dropdown-menu {
+            position: absolute;
+            right: 0;
+            top: calc(100% + 8px);
+            background: rgba(255,255,255,0.98);
+            border-radius: 12px;
+            padding: 0.5rem;
+            box-shadow: 0 12px 40px rgba(19,42,74,0.08);
+            display: none;
+            min-width: 180px;
+            border: 1px solid rgba(91,190,247,0.08);
+            z-index: 30;
+        }
+
+        .dropdown-menu a {
+            display: block;
+            padding: 0.6rem 0.75rem;
+            color: var(--dark-blue);
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 600;
+        }
+
+        .dropdown-menu a:hover { background: rgba(91,190,247,0.06); color: var(--light-blue); }
+
+        .nav-dropdown:hover .dropdown-menu { display: block; }
 
         .site-nav a {
             color: var(--dark-blue);
@@ -68,6 +127,8 @@
             color: var(--light-blue);
         }
 
+        .site-nav a:focus, .nav-link:focus, .btn:focus { outline: 3px solid rgba(91,190,247,0.14); outline-offset:2px; }
+
         .hero {
             position: relative;
             min-height: 100vh;
@@ -82,18 +143,38 @@
             left: 0;
             width: 100%;
             height: 120%;
-            background: transparent;
+            background-color: #eff9ff;
             z-index: -2;
             will-change: transform;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            overflow: hidden;
+        }
+
+        .hero-bg-image {
+            position: absolute;
+            inset: 0;
+            z-index: -2;
+            overflow: hidden;
+        }
+
+        .hero-bg-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center center;
+            display: block;
+            min-height: 100%;
+        }
+
+        .hero-bg::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(180deg, rgba(255,255,255,0.72), rgba(255,255,255,0.14));
+            pointer-events: none;
         }
 
         .hero-bg svg {
-            width: 100%;
-            height: 100%;
-            display: block;
+            display: none;
         }
 
         .hero-bg-fallback {
@@ -102,8 +183,16 @@
             left: 0;
             width: 100%;
             height: 120%;
-            background: linear-gradient(135deg, #f5f7fa 0%, #e4e9f2 50%, #dce3ed 100%);
+            background: radial-gradient(circle at 20% 18%, rgba(255, 255, 255, 0.96), transparent 26%),
+                        radial-gradient(circle at 86% 26%, rgba(91, 190, 247, 0.22), transparent 16%),
+                        linear-gradient(145deg, #d7f0ff 0%, #eaf8ff 34%, #ffffff 100%);
             z-index: -3;
+        }
+
+        .hero {
+            box-shadow: inset 0 0 0 1px rgba(255,255,255,0.35);
+            background: radial-gradient(circle at top right, rgba(92, 190, 247, 0.24), transparent 22%),
+                        linear-gradient(180deg, #ddf2ff 0%, #f7fcff 35%, #ffffff 100%);
         }
 
         .hero-overlay {
@@ -128,6 +217,39 @@
             min-height: 100vh;
         }
 
+        .doctor-preview {
+            max-width: 1100px;
+            margin: 3rem auto;
+            display: grid;
+            grid-template-columns: 1fr 340px;
+            gap: 1.5rem;
+            align-items: center;
+            padding: 1.25rem;
+            border-radius: 18px;
+            background: rgba(255,255,255,0.95);
+            box-shadow: 0 12px 40px rgba(19,42,74,0.06);
+            border: 1px solid rgba(91,190,247,0.06);
+        }
+
+        .doctor-preview img{
+            width:100%;
+            height:auto;
+            border-radius:18px;
+            display:block;
+            object-fit:cover;
+            box-shadow:0 18px 45px rgba(19,42,74,0.12);
+            border:1px solid rgba(91,190,247,0.15);
+        }
+
+        .doctor-preview .meta h3{margin:0 0 0.5rem;font-size:1.25rem;color:var(--dark-blue)}
+        .doctor-preview .meta p{margin:0;color:#536475;line-height:1.65}
+
+        .btn-secondary.small{padding:0.6rem 1rem;border-radius:999px}
+        .homepage-contact{max-width:1100px;margin:2.5rem auto;padding:1.25rem;border-radius:16px;background:rgba(244,251,255,0.9);border:1px solid rgba(91,190,247,0.06);display:flex;align-items:center;justify-content:space-between;gap:1rem}
+        .homepage-contact .left{max-width:72%}
+        .homepage-contact .actions{display:flex;gap:0.75rem}
+        @media(max-width:760px){.doctor-preview{grid-template-columns:1fr}.homepage-contact{flex-direction:column;align-items:flex-start}}
+
         .hero-left {
             z-index: 2;
             padding: 2rem 0;
@@ -140,13 +262,49 @@
             position: relative;
         }
 
-        .hero-visual-spacer {
+        .hero-image {
             width: 100%;
-            height: 100%;
-            min-height: 400px;
-            background: transparent;
-            border-radius: 24px;
-            position: relative;
+            max-width: 580px;
+            border-radius: 40px;
+            overflow: hidden;
+            box-shadow: 0 32px 110px rgba(19,42,74,0.16);
+            border: 1px solid rgba(91,190,247,0.18);
+            background: #ffffff;
+        }
+
+        .hero-image img {
+            display: block;
+            width: 100%;
+            height: auto;
+        }
+
+        .hero-visual-spacer {
+            display: none;
+        }
+
+        .hero-visual-spacer::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background-image: radial-gradient(circle at 20% 18%, rgba(91,190,247,0.16), transparent 22%),
+                              radial-gradient(circle at 80% 20%, rgba(255,255,255,0.6), transparent 22%),
+                              radial-gradient(circle at 50% 75%, rgba(255,255,255,0.55), transparent 18%),
+                              linear-gradient(135deg, rgba(255,255,255,0.22), rgba(91,190,247,0.06));
+            pointer-events: none;
+        }
+
+        .hero-visual-spacer::after {
+            content: '';
+            position: absolute;
+            left: 12%;
+            top: 50%;
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            transform: translateY(-50%);
+            background: rgba(255,255,255,0.48);
+            box-shadow: 0 0 0 80px rgba(255,255,255,0.04);
+            pointer-events: none;
         }
 
         .logo {
@@ -468,35 +626,37 @@
 </head>
 <body>
     <header class="site-header">
-        <a href="index.html" class="brand-link">Peacock Dental</a>
+        <a href="index.html" class="brand-link">
+            <span class="brand-logo">
+                <img src="images/logo.jpg" alt="Peacock Dental logo" loading="lazy" />
+            </span>
+            Peacock Dental
+        </a>
         <nav class="site-nav">
             <a href="index.html" class="active">Home</a>
             <a href="awareness.html">Awareness</a>
-            <a href="contact.html">Contact</a>
+            <a href="services.html">Services</a>
+            <a href="our-doctor.html">Our Doctor</a>
+            <div class="nav-dropdown">
+                <button class="nav-link" aria-haspopup="true" aria-expanded="false">Contact ▾</button>
+                <div class="dropdown-menu" role="menu">
+                    <a href="contact.html">Contact & Location</a>
+                    <a href="contact.html#book">Book Appointment</a>
+                    <a href="tel:0981555000">Call Us</a>
+                    <a href="mailto:peacockDentalEthiopia@gmail.com">Send Message</a>
+                </div>
+            </div>
         </nav>
     </header>
     <section class="hero">
         <div class="hero-bg-fallback"></div>
         <div class="hero-bg" role="img" aria-label="Calming dental clinic interior with a modern dental chair, soft lighting, and relaxing atmosphere">
-            <svg viewBox="0 0 1920 1080" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
-                <defs>
-                    <linearGradient id="skyGrad" x1="0%" y1="0%" x2="0%" y2="100%">
-                        <stop offset="0%" style="stop-color:#c9e4f7;stop-opacity:1" />
-                        <stop offset="30%" style="stop-color:#e8f4fc;stop-opacity:1" />
-                        <stop offset="60%" style="stop-color:#f4fbff;stop-opacity:1" />
-                        <stop offset="100%" style="stop-color:#d4eafc;stop-opacity:1" />
-                    </linearGradient>
-                    <linearGradient id="mistGrad" x1="0%" y1="0%" x2="0%" y2="100%">
-                        <stop offset="0%" style="stop-color:#ffffff;stop-opacity:0.85" />
-                        <stop offset="60%" style="stop-color:#f4fbff;stop-opacity:0.4" />
-                        <stop offset="100%" style="stop-color:#e8f4fc;stop-opacity:0" />
-                    </linearGradient>
-                    <linearGradient id="groundGrad" x1="0%" y1="0%" x2="0%" y2="100%">
-                        <stop offset="0%" style="stop-color:#d4eafc;stop-opacity:1" />
-                        <stop offset="100%" style="stop-color:#a3c4d9;stop-opacity:1" />
-                    </linearGradient>
-                    <filter id="blur" x="-20%" y="-20%" width="140%" height="140%">
-                        <feGaussianBlur in="SourceGraphic" stdDeviation="4" />
+            <div class="hero-bg-image">
+                <img src="images/clinic-hero.svg" alt="Calm dental clinic interior illustration" loading="lazy" />
+            </div>
+        </div>
+        <div class="hero-overlay"></div>
+
                     </filter>
                     <filter id="softBlur" x="-20%" y="-20%" width="140%" height="140%">
                         <feGaussianBlur in="SourceGraphic" stdDeviation="2" />
@@ -653,10 +813,12 @@
         <div class="hero-content">
             <div class="hero-left">
                 <div class="logo">
-                    <div class="logo-icon">D</div>
-                    <span class="logo-text">DENTAL CLINIC</span>
+                    <span class="brand-logo">
+                        <img src="images/logo.jpg" alt="Peacock Dental logo" loading="lazy" />
+                    </span>
+                    <span class="logo-text">Peacock Dental</span>
                 </div>
-                
+
                 <p class="brand-name">Calm Dental Care</p>
                 
                 <div class="hero-heading">
@@ -676,7 +838,9 @@
             </div>
             
             <div class="hero-right">
-                <div class="hero-visual-spacer"></div>
+                <div class="hero-image">
+                    <img src="images/clinic-hero.svg" alt="Calm dental clinic interior illustration" loading="lazy" />
+                </div>
             </div>
         </div>
     </section>
@@ -706,6 +870,29 @@
         </div>
     </section>
 
+    <section class="doctor-preview" aria-labelledby="doctor-preview-title">
+        <div class="meta">
+            <span class="contact-badge">✦ Meet Our Doctor</span>
+            <h3 id="doctor-preview-title">Meet Our Distinguished Head Dentist</h3>
+            <p>Dr. Samuel Siyoum leads Peacock Dental Ethiopia with clinical excellence, compassion, and modern techniques focused on long-term oral health.</p>
+            <p style="margin-top:1rem"><a href="our-doctor.html" class="btn btn-secondary small">Learn More About Dr. Samuel Siyoum</a></p>
+        </div>
+        <div class="portrait" style="max-width:340px">
+            <img src="images/dr-samuel.png" alt="Dr. Samuel Siyoum preview" loading="lazy" width="340" />
+        </div>
+    </section>
+
+    <section class="homepage-contact" aria-label="Contact preview">
+        <div class="left">
+            <h3 style="margin:0;color:var(--dark-blue)">Contact & Location</h3>
+            <p style="margin:0.4rem 0;color:#536475">Peacock Dental Ethiopia — Asosa. For appointments and inquiries, call or email us.</p>
+        </div>
+        <div class="actions">
+            <a href="tel:0981555000" class="btn btn-primary">Call</a>
+            <a href="contact.html" class="btn btn-secondary">Contact Page</a>
+        </div>
+    </section>
+
     <script>
         (function() {
             const heroBg = document.querySelector('.hero-bg');
@@ -731,5 +918,24 @@
             }
         })();
     </script>
+    <script type="module">
+  // Import the functions you need from the SDKs you need
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/12.16.0/firebase-app.js";
+  // TODO: Add SDKs for Firebase products that you want to use
+  // https://firebase.google.com/docs/web/setup#available-libraries
+
+  // Your web app's Firebase configuration
+  const firebaseConfig = {
+    apiKey: "AIzaSyAISOtrPmq0gw8DJtB6XP4iWygTbCKgxv8",
+    authDomain: "peacock-dental-ethiopia.firebaseapp.com",
+    projectId: "peacock-dental-ethiopia",
+    storageBucket: "peacock-dental-ethiopia.firebasestorage.app",
+    messagingSenderId: "1051293559079",
+    appId: "1:1051293559079:web:4b23ddb921deb71cefa102"
+  };
+
+  // Initialize Firebase
+  const app = initializeApp(firebaseConfig);
+</script>
 </body>
 </html>
