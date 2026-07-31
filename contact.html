@@ -97,13 +97,6 @@
 
         .site-nav a:focus, .nav-link:focus, .btn:focus { outline: 3px solid rgba(91,190,247,0.14); outline-offset:2px; }
 
-        .nav-dropdown { position: relative; }
-        .nav-dropdown .nav-link { background: transparent; border: none; color: var(--dark-blue); font-weight:600; padding:0.7rem 1rem; border-radius:999px; cursor:pointer; }
-        .dropdown-menu { position:absolute; right:0; top:calc(100% + 8px); background:rgba(255,255,255,0.98); border-radius:12px; padding:0.5rem; box-shadow:0 12px 40px rgba(19,42,74,0.08); display:none; min-width:180px; border:1px solid rgba(91,190,247,0.08); z-index:30; }
-        .dropdown-menu a{display:block;padding:0.6rem 0.75rem;color:var(--dark-blue);text-decoration:none;border-radius:8px;font-weight:600}
-        .dropdown-menu a:hover{background:rgba(91,190,247,0.06);color:var(--light-blue)}
-        .nav-dropdown:hover .dropdown-menu{display:block}
-
         .contact-header {
             padding: 5rem 5% 3rem;
             text-align: center;
@@ -731,6 +724,65 @@
             }
         }
     </style>
+    <style>
+    /* Fix mobile dark-mode inversion and mobile nav layout */
+    html { color-scheme: light; }
+    .site-header { background: #ffffff; }
+    .site-header, .site-header .brand-link, .site-header .brand-logo img { color: var(--dark-blue); }
+    .site-nav a { color: var(--dark-blue); }
+    @media (max-width: 768px) {
+      .site-nav a { display: block; padding: 0.8rem 1rem; color: var(--dark-blue); background: transparent; border-radius: 8px; }
+      
+      
+    }
+    </style>
+    <style>
+    .mobile-menu-toggle { display:none; background: transparent; border:none; color:#fff; font-size:1.8rem; width:48px; height:48px; align-items:center; justify-content:center; cursor:pointer; }
+    .mobile-menu-overlay { position: fixed; inset:0; background:#050505; color:#fff; overflow-y:auto; transform: translateX(100%); transition: transform 0.3s ease; z-index:999; padding: 24px 24px 32px; display:flex; flex-direction:column; }
+    .mobile-menu-overlay.open { transform: translateX(0); }
+    .mobile-menu-close { align-self:flex-end; background:transparent; border:none; color:#fff; font-size:2.4rem; line-height:1; padding:0.4rem; cursor:pointer; }
+    .mobile-menu-brand { display:flex; align-items:center; gap:12px; margin: 14px 0 28px; }
+    .mobile-menu-brand img { width:40px; height:40px; border-radius:12px; object-fit:cover; }
+    .mobile-menu-brand span { font-size:16px; font-weight:700; letter-spacing:0.02em; color:#fff; }
+    .mobile-menu-list { display:grid; gap:18px; margin-bottom:32px; }
+    .mobile-menu-list a { font-size: 18px; color:#fff; text-decoration:none; padding: 14px 0; text-align:center; min-height:48px; display:flex; align-items:center; justify-content:center; border-bottom:1px solid rgba(255,255,255,0.08); }
+    .mobile-menu-list a.active { border-left:4px solid #36C35D; padding-left:14px; text-align:left; border-bottom:none; }
+    .mobile-action-grid { display:grid; gap:20px; margin-bottom:28px; }
+    .mobile-action { display:block; width:100%; text-align:center; color:#fff; background:#111; border:1px solid rgba(255,255,255,0.12); border-radius:16px; padding:16px 18px; font-size:16px; text-decoration:none; min-height:56px; }
+    .mobile-action:hover { background:#161616; }
+    .mobile-social-links { display:grid; gap:16px; margin-top:auto; }
+    .mobile-social-links a { color:#fff; text-decoration:none; font-size:16px; padding:14px 0; text-align:center; border-top:1px solid rgba(255,255,255,0.08); }
+    @media (max-width: 767px) {
+      html { color-scheme: light; }
+      body { font-size:16px; line-height:1.7; }
+      .site-header { max-width:100%; padding:0 20px; height:70px; background: rgba(5,5,5,0.95); border-bottom:1px solid rgba(255,255,255,0.12); justify-content:space-between; }
+      .site-header .brand-link { color:#fff; font-size:16px; }
+      .site-header .brand-logo { width:40px; height:40px; }
+      .site-header .brand-logo img { width:40px; height:40px; }
+      .site-nav { display:none !important; }
+      .mobile-menu-toggle { display:flex; }
+      
+      .hero, .awareness-page, .contact-section, .service-grid, .container, .contact-header, .direct-reach-section, .cta-section, .why-we-matter { padding-left:20px; padding-right:20px; }
+      .hero { min-height:auto; padding-top:80px; }
+      .section { padding:60px 0; }
+      .section-title, .contact-title, .hero-copy h1, .reach-title { font-size:28px; }
+      .hero-copy h1 { font-size: clamp(2.5rem, 4vw, 3rem); }
+      .service-grid { display:grid; grid-template-columns:1fr; gap:20px; margin:0; padding:0; }
+      .service-card { width:100%; padding:20px; margin:0; border-radius:20px; }
+      .contact-card, .contact-card-phone, .contact-card-email, .contact-card-tiktok { grid-template-columns:1fr; align-items:flex-start; }
+      .contact-card-button { width:100%; margin-top:12px; }
+      .contact-actions-grid { display:grid; gap:16px; }
+      .card, .cards { grid-template-columns:1fr; }
+      .portrait { width:100%; max-width:none; }
+      .hero-right { display:none; }
+      .hero-bg, .hero-bg-image { display:none !important; }
+      .hero-bg-fallback { height:auto; background: linear-gradient(180deg, #f7fbff 0%, #ffffff 100%); }
+      .btn, .btn-primary, .btn-secondary, .mobile-action, .contact-card-button { min-height:56px; border-radius:16px; }
+      .btn { padding:16px 18px; width:100%; max-width:100%; }
+      .btn-secondary { width:100%; }
+      .mobile-menu-overlay { padding-top:24px; }
+    }
+    </style>
 </head>
 <body>
     <header class="site-header">
@@ -740,23 +792,42 @@
             </span>
             Peacock Dental
         </a>
+        <button class="mobile-menu-toggle" aria-label="Open menu" aria-expanded="false">☰</button>
         <nav class="site-nav">
             <a href="index.html">Home</a>
             <a href="awareness.html">Awareness</a>
             <a href="services.html">Services</a>
             <a href="our-doctor.html">Our Doctor</a>
-            <div class="nav-dropdown">
-                <button class="nav-link" aria-haspopup="true" aria-expanded="false">Contact ▾</button>
-                <div class="dropdown-menu" role="menu">
-                    <a href="contact.html">Contact & Location</a>
-                    <a href="contact.html#book">Book Appointment</a>
-                    <a href="tel:0981555000">Call Us</a>
-                    <a href="mailto:peacockDentalEthiopia@gmail.com">Send Message</a>
-                </div>
-            </div>
+            <a href="contact.html" class="active">Contact</a>
         </nav>
     </header>
+    <div class="mobile-menu-overlay" aria-hidden="true" id="mobileMenu">
+        <button class="mobile-menu-close" aria-label="Close menu">✕</button>
+        <div class="mobile-menu-brand">
+            <img src="images/logo.jpg" alt="Peacock Dental logo" loading="lazy" />
+            <span>Peacock Dental</span>
+        </div>
+        <nav class="mobile-menu-list" aria-label="Mobile Primary Menu">
+            <a href="index.html">Home</a>
+            <a href="awareness.html">Awareness</a>
+            <a href="services.html">Services</a>
+            <a href="our-doctor.html">Our Doctor</a>
+            <a href="contact.html" class="active">Contact</a>
+        </nav>
+        <div class="mobile-action-grid">
+            <a href="#book" class="mobile-action">Book Appointment</a>
+            <a href="tel:0981555000" class="mobile-action">Call Clinic</a>
+            <a href="mailto:peacockDentalEthiopia@gmail.com" class="mobile-action">Send Message</a>
+            <a href="https://maps.app.goo.gl/SDk2iZWEWTHbcWeV6?g_st=atm" target="_blank" class="mobile-action">Google Maps</a>
+        </div>
+        <div class="mobile-social-links">
+            <a href="https://www.facebook.com" target="_blank">Facebook</a>
+            <a href="https://www.instagram.com" target="_blank">Instagram</a>
+            <a href="https://t.me" target="_blank">Telegram</a>
+        </div>
+    </div>
     <header class="contact-header">
+
         <div class="contact-badge animate-on-scroll">✦ Get In Touch</div>
         <h1 class="contact-title animate-on-scroll">We Are Here For Your Smile.</h1>
         <p class="contact-subtitle animate-on-scroll">Reach out through phone, email, or social media. Our team is ready to assist you with any questions about our dental services.</p>
@@ -911,6 +982,36 @@
                 observer.observe(el);
             });
         })();
-    </script>
-</body>
+    </script><script>
+        (function() {
+            const toggle = document.querySelector('.mobile-menu-toggle');
+            const overlay = document.querySelector('.mobile-menu-overlay');
+            const closeBtn = document.querySelector('.mobile-menu-close');
+            const body = document.body;
+            if (!toggle || !overlay || !closeBtn) return;
+
+            const setOpen = (isOpen) => {
+                if (isOpen) {
+                    overlay.classList.add('open');
+                    overlay.setAttribute('aria-hidden', 'false');
+                    toggle.setAttribute('aria-expanded', 'true');
+                    body.style.overflow = 'hidden';
+                } else {
+                    overlay.classList.remove('open');
+                    overlay.setAttribute('aria-hidden', 'true');
+                    toggle.setAttribute('aria-expanded', 'false');
+                    body.style.overflow = '';
+                }
+            };
+
+            toggle.addEventListener('click', () => setOpen(true));
+            closeBtn.addEventListener('click', () => setOpen(false));
+            overlay.addEventListener('click', (event) => {
+                if (event.target === overlay) setOpen(false);
+            });
+            document.querySelectorAll('.mobile-menu-list a').forEach((link) => {
+                link.addEventListener('click', () => setOpen(false));
+            });
+        })();
+    </script></body>
 </html>
