@@ -22,12 +22,27 @@
             --body-text: #2C3E50;
         }
 
+        html,
+        body {
+            width: 100%;
+            overflow-x: hidden;
+            margin: 0;
+            padding: 0;
+        }
+
         body {
             font-family: 'Inter', 'Segoe UI', system-ui, -apple-system, sans-serif;
             line-height: 1.7;
             color: var(--body-text);
             background: var(--white);
-            overflow-x: hidden;
+        }
+
+        img,
+        video,
+        iframe {
+            max-width: 100%;
+            height: auto;
+            display: block;
         }
 
         .site-header {
@@ -71,7 +86,7 @@
         }
 
         .site-nav {
-            display: flex;
+            display: none;
             gap: 1rem;
             flex-wrap: wrap;
         }
@@ -83,6 +98,12 @@
             padding: 0.7rem 1rem;
             border-radius: 999px;
             transition: background 0.25s ease, color 0.25s ease;
+        }
+
+        @media (min-width: 769px) {
+            .site-nav {
+                display: flex !important;
+            }
         }
 
         .site-nav a:hover,
@@ -642,8 +663,8 @@
             </span>
             Peacock Dental
         </a>
-        <button class="mobile-menu-toggle" aria-label="Open menu" aria-expanded="false">☰</button>
-        <nav class="site-nav">
+        <button class="mobile-menu-toggle" aria-label="Open menu" aria-expanded="false" style="display:none;">☰</button>
+        <nav class="site-nav" style="display:none;">
             <a href="index.html" class="active">Home</a>
             <a href="awareness.html">Awareness</a>
             <a href="services.html">Services</a>

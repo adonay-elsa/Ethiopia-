@@ -19,10 +19,25 @@
             --dark-blue: #1B4F8C;
         }
 
+        html,
+        body {
+            width: 100%;
+            overflow-x: hidden;
+            margin: 0;
+            padding: 0;
+        }
+
         body {
             font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
-            overflow-x: hidden;
             line-height: 1.6;
+        }
+
+        img,
+        video,
+        iframe {
+            max-width: 100%;
+            height: auto;
+            display: block;
         }
 
         .site-header {
@@ -66,7 +81,7 @@
         }
 
         .site-nav {
-            display: flex;
+            display: none;
             gap: 1rem;
             flex-wrap: wrap;
         }
@@ -79,6 +94,12 @@
             padding: 0.7rem 1rem;
             border-radius: 999px;
             transition: background 0.25s ease, color 0.25s ease;
+        }
+
+        @media (min-width: 769px) {
+            .site-nav {
+                display: flex !important;
+            }
         }
 
         .site-nav a:hover,
@@ -651,8 +672,8 @@
             </span>
             Peacock Dental
         </a>
-        <button class="mobile-menu-toggle" aria-label="Open menu" aria-expanded="false">☰</button>
-        <nav class="site-nav">
+        <button class="mobile-menu-toggle" aria-label="Open menu" aria-expanded="false" style="display:none;">☰</button>
+        <nav class="site-nav" style="display:none;">
             <a href="index.html" class="active">Home</a>
             <a href="awareness.html">Awareness</a>
             <a href="services.html">Services</a>
@@ -990,9 +1011,6 @@
     <script type="module">
   // Import the functions you need from the SDKs you need
   import { initializeApp } from "https://www.gstatic.com/firebasejs/12.16.0/firebase-app.js";
-  // TODO: Add SDKs for Firebase products that you want to use
-  // https://firebase.google.com/docs/web/setup#available-libraries
-
   // Your web app's Firebase configuration
   const firebaseConfig = {
     apiKey: "AIzaSyAISOtrPmq0gw8DJtB6XP4iWygTbCKgxv8",

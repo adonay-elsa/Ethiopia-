@@ -17,12 +17,27 @@
         }
 
         * { box-sizing: border-box; margin: 0; padding: 0; }
+        html,
+        body {
+            width: 100%;
+            overflow-x: hidden;
+            margin: 0;
+            padding: 0;
+        }
+
         body {
             font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
             color: var(--body-text);
             background: linear-gradient(180deg, #f9fcff 0%, #ffffff 100%);
             line-height: 1.7;
-            overflow-x: hidden;
+        }
+
+        img,
+        video,
+        iframe {
+            max-width: 100%;
+            height: auto;
+            display: block;
         }
 
         .site-header {
@@ -61,7 +76,7 @@
 
         .brand-logo img { width: 36px; height: 36px; display: block; }
 
-        .site-nav { display: flex; gap: 1rem; flex-wrap: wrap; }
+        .site-nav { display: none; gap: 1rem; flex-wrap: wrap; }
         .site-nav a {
             color: var(--dark-blue);
             text-decoration: none;
@@ -69,6 +84,10 @@
             padding: 0.7rem 1rem;
             border-radius: 999px;
             transition: background 0.25s ease, color 0.25s ease;
+        }
+
+        @media (min-width: 769px) {
+            .site-nav { display: flex !important; }
         }
         .site-nav a:hover,
         .site-nav a.active { background: rgba(91,190,247,0.14); color: var(--light-blue); }
@@ -254,8 +273,8 @@
             <span class="brand-logo"><img src="images/logo.jpg" alt="Peacock Dental logo" loading="lazy" /></span>
             Peacock Dental
         </a>
-        <button class="mobile-menu-toggle" aria-label="Open menu" aria-expanded="false">☰</button>
-        <nav class="site-nav">
+        <button class="mobile-menu-toggle" aria-label="Open menu" aria-expanded="false" style="display:none;">☰</button>
+        <nav class="site-nav" style="display:none;">
             <a href="index.html">Home</a>
             <a href="awareness.html">Awareness</a>
             <a href="services.html" class="active">Services</a>
