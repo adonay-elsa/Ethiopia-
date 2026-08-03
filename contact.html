@@ -16,13 +16,14 @@
 
         :root {
             --white: #FFFFFF;
-            --light-blue: #5BBEF7;
-            --very-light-blue: #F4FBFF;
-            --dark-blue: #1B4F8C;
-            --deep-blue: #132a4a;
-            --surface: rgba(255, 255, 255, 0.82);
-            --body-text: #2C3E50;
-            --muted-text: #5d7187;
+            --primary: #2F80ED;
+            --primary-light: #EAF6FF;
+            --text-primary: #1F2937;
+            --text-secondary: #4B5563;
+            --text-dark: #0F172A;
+            --border: #D6EAF8;
+            --surface: #F8FCFF;
+            --shadow: rgba(31, 41, 55, 0.06);
         }
 
         html,
@@ -36,8 +37,8 @@
         body {
             font-family: 'Inter', 'Segoe UI', system-ui, -apple-system, sans-serif;
             line-height: 1.75;
-            color: var(--body-text);
-            background: radial-gradient(circle at top left, rgba(91, 190, 247, 0.18), transparent 24%),
+            color: var(--text-primary);
+            background: radial-gradient(circle at top left, rgba(47, 128, 237, 0.18), transparent 24%),
                         linear-gradient(180deg, #f8fbff 0%, #ffffff 100%);
         }
 
@@ -59,14 +60,14 @@
             gap: 1rem;
             background: rgba(255,255,255,0.92);
             backdrop-filter: blur(12px);
-            border-bottom: 1px solid rgba(91, 190, 247, 0.14);
+            border-bottom: 1px solid rgba(47, 128, 237, 0.14);
             position: sticky;
             top: 0;
             z-index: 10;
         }
 
         .brand-link {
-            color: var(--dark-blue);
+            color: var(--text-primary);
             font-size: 1rem;
             font-weight: 700;
             text-decoration: none;
@@ -96,7 +97,7 @@
         }
 
         .site-nav a {
-            color: var(--dark-blue);
+            color: var(--text-primary);
             text-decoration: none;
             font-weight: 600;
             padding: 0.7rem 1rem;
@@ -112,8 +113,8 @@
 
         .site-nav a:hover,
         .site-nav a.active {
-            background: rgba(91, 190, 247, 0.14);
-            color: var(--light-blue);
+            background: rgba(47, 128, 237, 0.14);
+            color: var(--primary);
         }
 
         .site-nav a:focus, .nav-link:focus, .btn:focus { outline: 3px solid rgba(91,190,247,0.14); outline-offset:2px; }
@@ -121,10 +122,10 @@
         .contact-header {
             padding: 5rem 5% 3rem;
             text-align: center;
-            background: radial-gradient(circle at top center, rgba(91, 190, 247, 0.12), transparent 42%),
+            background: radial-gradient(circle at top center, rgba(47, 128, 237, 0.12), transparent 42%),
                         linear-gradient(180deg, rgba(255,255,255,0.95) 0%, rgba(244,251,255,0.85) 100%);
             backdrop-filter: blur(8px);
-            border-bottom: 1px solid rgba(91, 190, 247, 0.12);
+            border-bottom: 1px solid rgba(47, 128, 237, 0.12);
         }
 
         .contact-badge {
@@ -133,27 +134,27 @@
             justify-content: center;
             padding: 0.7rem 1.4rem;
             background: rgba(255, 255, 255, 0.92);
-            border: 1px solid rgba(91, 190, 247, 0.2);
+            border: 1px solid rgba(47, 128, 237, 0.2);
             border-radius: 999px;
             font-size: 0.9rem;
             font-weight: 700;
             letter-spacing: 0.5px;
             margin-bottom: 1.25rem;
-            color: var(--light-blue);
-            box-shadow: 0 12px 40px rgba(91, 190, 247, 0.08);
+            color: var(--primary);
+            box-shadow: 0 12px 40px rgba(47, 128, 237, 0.08);
         }
 
         .contact-title {
             font-size: clamp(2.5rem, 4vw, 3.5rem);
             font-weight: 800;
-            color: var(--deep-blue);
+            color: var(--text-primary);
             line-height: 1.05;
             margin-bottom: 1.15rem;
         }
 
         .contact-subtitle {
             font-size: 1.05rem;
-            color: var(--muted-text);
+            color: var(--text-secondary);
             max-width: 720px;
             margin: 0 auto;
             line-height: 1.9;
@@ -163,27 +164,27 @@
         .contact-badge {
             display: inline-block;
             padding: 0.5rem 1.25rem;
-            background: var(--very-light-blue);
-            border: 1px solid var(--light-blue);
+            background: var(--primary-light);
+            border: 1px solid var(--primary);
             border-radius: 50px;
             font-size: 0.85rem;
             font-weight: 600;
             letter-spacing: 0.5px;
             margin-bottom: 1.25rem;
-            color: var(--light-blue);
+            color: var(--primary);
         }
 
         .contact-title {
             font-size: clamp(2rem, 4vw, 3rem);
             font-weight: 700;
-            color: var(--dark-blue);
+            color: var(--text-primary);
             line-height: 1.2;
             margin-bottom: 1rem;
         }
 
         .contact-subtitle {
             font-size: 1.1rem;
-            color: var(--body-text);
+            color: var(--text-primary);
             max-width: 700px;
             margin: 0 auto;
             line-height: 1.8;
@@ -192,7 +193,7 @@
 
         .contact-section {
             padding: 3rem 5%;
-            background: #F4FBFF;
+            background: #EAF6FF;
         }
 
         .contact-shell {
@@ -207,7 +208,7 @@
             border-radius: 34px;
             padding: 2.5rem 2.5rem 2rem;
             box-shadow: 0 30px 90px rgba(19, 42, 74, 0.08);
-            border: 1px solid rgba(91, 190, 247, 0.18);
+            border: 1px solid rgba(47, 128, 237, 0.18);
             display: flex;
             align-items: flex-start;
             justify-content: space-between;
@@ -218,14 +219,14 @@
         .contact-shell-title {
             font-size: clamp(2rem, 3vw, 2.8rem);
             font-weight: 800;
-            color: var(--deep-blue);
+            color: var(--text-primary);
             letter-spacing: -0.04em;
             line-height: 1.05;
             margin: 0;
         }
 
         .contact-shell-copy {
-            color: var(--muted-text);
+            color: var(--text-secondary);
             opacity: 0.94;
             max-width: 620px;
             line-height: 1.8;
@@ -243,7 +244,7 @@
         }
 
         .app-meta p {
-            color: var(--muted-text);
+            color: var(--text-secondary);
             opacity: 0.95;
             font-size: 0.95rem;
             margin: 0;
@@ -254,7 +255,7 @@
             align-items: center;
             justify-content: center;
             padding: 0.65rem 1rem;
-            background: linear-gradient(135deg, #4a9feb, #1b4f8c);
+            background: linear-gradient(135deg, #4a9feb, #1F2937);
             color: var(--white);
             border-radius: 999px;
             font-size: 0.9rem;
@@ -267,12 +268,12 @@
             align-items: center;
             gap: 0.5rem;
             padding: 0.85rem 1rem;
-            background: rgba(91, 190, 247, 0.12);
+            background: rgba(47, 128, 237, 0.12);
             border-radius: 999px;
-            color: var(--dark-blue);
+            color: var(--text-primary);
             font-weight: 700;
             letter-spacing: 0.5px;
-            border: 1px solid rgba(91, 190, 247, 0.3);
+            border: 1px solid rgba(47, 128, 237, 0.3);
         }
 
         .app-meta {
@@ -285,14 +286,14 @@
         }
 
         .app-meta p {
-            color: var(--body-text);
+            color: var(--text-primary);
             opacity: 0.88;
         }
 
         .status-pill {
             display: inline-block;
             padding: 0.5rem 0.9rem;
-            background: var(--light-blue);
+            background: var(--primary);
             color: var(--white);
             border-radius: 999px;
             font-size: 0.9rem;
@@ -312,7 +313,7 @@
             grid-template-columns: auto 1fr auto;
             gap: 1.5rem;
             align-items: center;
-            border: 1px solid rgba(91, 190, 247, 0.12);
+            border: 1px solid rgba(47, 128, 237, 0.12);
             box-shadow: 0 24px 60px rgba(19, 42, 74, 0.08);
             text-decoration: none;
             color: inherit;
@@ -323,7 +324,7 @@
         .contact-card:hover {
             transform: translateY(-6px);
             box-shadow: 0 28px 70px rgba(19, 42, 74, 0.14);
-            border-color: rgba(91, 190, 247, 0.22);
+            border-color: rgba(47, 128, 237, 0.22);
         }
 
         .contact-card-icon {
@@ -335,9 +336,9 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            color: var(--deep-blue);
+            color: var(--text-primary);
             position: relative;
-            box-shadow: 0 12px 28px rgba(91, 190, 247, 0.15);
+            box-shadow: 0 12px 28px rgba(47, 128, 237, 0.15);
         }
 
         .contact-card-icon svg {
@@ -362,13 +363,13 @@
 
         .contact-card-details h3 {
             font-size: 1.05rem;
-            color: var(--deep-blue);
+            color: var(--text-primary);
             margin-bottom: 0.15rem;
             letter-spacing: -0.02em;
         }
 
         .contact-card-details p {
-            color: var(--muted-text);
+            color: var(--text-secondary);
             opacity: 0.92;
             line-height: 1.7;
             font-size: 0.96rem;
@@ -376,7 +377,7 @@
         }
 
         .contact-card-value {
-            color: var(--dark-blue);
+            color: var(--text-primary);
             font-weight: 700;
             margin-top: 0.45rem;
             letter-spacing: 0.01em;
@@ -407,23 +408,23 @@
         }
 
         .contact-card-email .contact-card-button {
-            background: linear-gradient(135deg, #1b4f8c, #163859);
+            background: linear-gradient(135deg, #1F2937, #163859);
             color: var(--white);
             box-shadow: 0 18px 40px rgba(27, 79, 140, 0.28);
         }
 
         .contact-card-tiktok .contact-card-button {
-            background: linear-gradient(135deg, #1b4f8c, #163859);
+            background: linear-gradient(135deg, #1F2937, #163859);
             color: var(--white);
             box-shadow: 0 18px 40px rgba(27, 79, 140, 0.28);
         }
 
         .contact-card-tiktok {
-            border-color: rgba(91, 190, 247, 0.14);
+            border-color: rgba(47, 128, 237, 0.14);
         }
 
         .contact-card-phone .contact-card-icon {
-            color: #1B4F8C;
+            color: #1F2937;
         }
 
         .contact-card-phone .contact-card-icon::after {
@@ -431,7 +432,7 @@
             position: absolute;
             inset: 8px;
             border-radius: 16px;
-            background: radial-gradient(circle, rgba(91, 190, 247, 0.24), transparent 60%);
+            background: radial-gradient(circle, rgba(47, 128, 237, 0.24), transparent 60%);
             animation: pulse 1.8s ease-out infinite;
             z-index: -1;
         }
@@ -489,20 +490,20 @@
 
         .contact-card .contact-value {
             font-size: 1.1rem;
-            color: var(--dark-blue);
+            color: var(--text-primary);
             font-weight: 600;
             margin-bottom: 0.25rem;
         }
 
         .contact-card .contact-action {
             font-size: 0.9rem;
-            color: var(--light-blue);
+            color: var(--primary);
             font-weight: 500;
         }
 
         .contact-card-phone {
-            background: var(--light-blue);
-            border-color: var(--light-blue);
+            background: var(--primary);
+            border-color: var(--primary);
         }
 
         .contact-card-phone .contact-card-icon {
@@ -520,28 +521,28 @@
         }
 
         .contact-card-phone:hover {
-            box-shadow: 0 15px 35px rgba(91, 190, 247, 0.35);
+            box-shadow: 0 15px 35px rgba(47, 128, 237, 0.35);
             transform: translateY(-5px);
         }
 
         .contact-card-email {
-            background: var(--very-light-blue);
-            border-color: var(--light-blue);
+            background: var(--primary-light);
+            border-color: var(--primary);
         }
 
         .contact-card-tiktok {
             background: var(--white);
-            border-color: var(--light-blue);
+            border-color: var(--primary);
         }
 
         .contact-card-tiktok:hover {
-            background: var(--very-light-blue);
+            background: var(--primary-light);
             transform: translateY(-5px);
         }
 
         .info-section {
             padding: 3rem 5% 5rem;
-            background: var(--very-light-blue);
+            background: var(--primary-light);
         }
 
         .info-container {
@@ -556,12 +557,12 @@
             background: var(--white);
             border-radius: 24px;
             padding: 2.5rem;
-            border: 1px solid rgba(91, 190, 247, 0.15);
+            border: 1px solid rgba(47, 128, 237, 0.15);
         }
 
         .info-card h3 {
             font-size: 1.3rem;
-            color: var(--dark-blue);
+            color: var(--text-primary);
             font-weight: 700;
             margin-bottom: 1.5rem;
         }
@@ -574,7 +575,7 @@
             display: flex;
             justify-content: space-between;
             padding: 1rem 0;
-            border-bottom: 1px solid rgba(91, 190, 247, 0.1);
+            border-bottom: 1px solid rgba(47, 128, 237, 0.1);
             font-size: 1rem;
         }
 
@@ -584,11 +585,11 @@
 
         .hours-day {
             font-weight: 600;
-            color: var(--dark-blue);
+            color: var(--text-primary);
         }
 
         .hours-time {
-            color: var(--body-text);
+            color: var(--text-primary);
         }
 
         .hours-time.closed {
@@ -599,9 +600,9 @@
         .map-placeholder {
             width: 100%;
             height: 300px;
-            border: 2px solid var(--light-blue);
+            border: 2px solid var(--primary);
             border-radius: 16px;
-            background: var(--very-light-blue);
+            background: var(--primary-light);
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -616,13 +617,13 @@
         }
 
         .map-placeholder h4 {
-            color: var(--dark-blue);
+            color: var(--text-primary);
             font-size: 1.1rem;
             margin-bottom: 0.5rem;
         }
 
         .map-placeholder p {
-            color: var(--body-text);
+            color: var(--text-primary);
             font-size: 0.95rem;
             opacity: 0.85;
             max-width: 300px;
@@ -642,15 +643,15 @@
         }
 
         .why-card {
-            background: var(--very-light-blue);
+            background: var(--primary-light);
             border-radius: 24px;
             padding: 2.5rem;
-            border: 1px solid rgba(91, 190, 247, 0.18);
+            border: 1px solid rgba(47, 128, 237, 0.18);
         }
 
         .why-card h2,
         .why-card h3 {
-            color: var(--dark-blue);
+            color: var(--text-primary);
             margin-bottom: 1rem;
         }
 
@@ -660,7 +661,7 @@
         }
 
         .why-card p {
-            color: var(--body-text);
+            color: var(--text-primary);
             line-height: 1.8;
             opacity: 0.92;
             margin-bottom: 1.2rem;
@@ -677,12 +678,12 @@
             background: var(--white);
             border-radius: 18px;
             padding: 1.35rem 1.25rem;
-            border: 1px solid rgba(91, 190, 247, 0.12);
-            box-shadow: 0 10px 24px rgba(91, 190, 247, 0.08);
+            border: 1px solid rgba(47, 128, 237, 0.12);
+            box-shadow: 0 10px 24px rgba(47, 128, 237, 0.08);
         }
 
         .service-pill h4 {
-            color: var(--dark-blue);
+            color: var(--text-primary);
             font-size: 1rem;
             font-weight: 700;
             margin-bottom: 0.45rem;
@@ -690,7 +691,7 @@
 
         .service-pill p {
             font-size: 0.95rem;
-            color: var(--body-text);
+            color: var(--text-primary);
             line-height: 1.7;
             opacity: 0.88;
         }
@@ -749,10 +750,10 @@
     /* Fix mobile dark-mode inversion and mobile nav layout */
     html { color-scheme: light; }
     .site-header { background: #ffffff; }
-    .site-header, .site-header .brand-link, .site-header .brand-logo img { color: var(--dark-blue); }
-    .site-nav a { color: var(--dark-blue); }
+    .site-header, .site-header .brand-link, .site-header .brand-logo img { color: var(--text-primary); }
+    .site-nav a { color: var(--text-primary); }
     @media (max-width: 768px) {
-      .site-nav a { display: block; padding: 0.8rem 1rem; color: var(--dark-blue); background: transparent; border-radius: 8px; }
+      .site-nav a { display: block; padding: 0.8rem 1rem; color: var(--text-primary); background: transparent; border-radius: 8px; }
       
       
     }
@@ -968,8 +969,8 @@
                         width="100%" height="300" style="border:0; border-radius:12px;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                     <div style="margin-top:0.8rem; display:flex; gap:0.75rem; align-items:center; justify-content:center;">
                         <div style="text-align:left;">
-                            <h4 style="margin:0;color:var(--dark-blue)">Peacock Dental Ethiopia</h4>
-                            <p style="margin:0.25rem 0;color:var(--body-text)">Asosa, Ethiopia</p>
+                            <h4 style="margin:0;color:var(--text-primary)">Peacock Dental Ethiopia</h4>
+                            <p style="margin:0.25rem 0;color:var(--text-primary)">Asosa, Ethiopia</p>
                         </div>
                         <div style="margin-left:auto; display:flex; gap:0.5rem;">
                             <a href="tel:0981555000" class="btn btn-primary">Call</a>
@@ -1031,3 +1032,5 @@
         })();
     </script></body>
 </html>
+
+

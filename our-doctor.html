@@ -8,12 +8,13 @@
     <style>
         :root {
             --white: #ffffff;
-            --light-blue: #F4FBFF;
-            --accent: #5BBEF7;
-            --dark: #1B4F8C;
-            --text: #2C3E50;
-            --surface: rgba(255,255,255,0.95);
-            --surface-muted: rgba(240,248,255,0.84);
+            --primary-light: #EAF6FF;
+            --primary: #2F80ED;
+            --text-primary: #1F2937;
+            --text-dark: #0F172A;
+            --text-secondary: #4B5563;
+            --surface: #F8FCFF;
+            --surface-muted: #EAF6FF;
         }
 
         *, *::before, *::after {
@@ -31,7 +32,7 @@
 
         body {
             font-family: Inter, Segoe UI, system-ui, sans-serif;
-            color: var(--text);
+            color: var(--text-primary);
             background: linear-gradient(180deg, #fbfdff 0%, #ffffff 100%);
             line-height: 1.7;
         }
@@ -62,7 +63,7 @@
 
         .brand-link {
             font-weight: 700;
-            color: var(--dark);
+            color: var(--text-primary);
             text-decoration: none;
             display: inline-flex;
             align-items: center;
@@ -96,7 +97,7 @@
         }
 
         .site-nav a {
-            color: var(--dark);
+            color: var(--text-primary);
             text-decoration: none;
             font-weight: 600;
             padding: 0.75rem 1rem;
@@ -114,7 +115,7 @@
         .site-nav a:hover,
         .site-nav a.active {
             background: rgba(91,190,247,0.14);
-            color: var(--light-blue);
+            color: var(--primary);
         }
 
         .hero {
@@ -138,20 +139,20 @@
             margin: 0 0 1rem;
             font-size: clamp(2rem, 3.5vw, 2.6rem);
             line-height: 1.05;
-            color: var(--dark);
+            color: var(--text-primary);
         }
 
         .sub {
             display: inline-flex;
             margin-bottom: 1rem;
-            color: var(--accent);
+            color: var(--primary);
             font-weight: 700;
             letter-spacing: 0.01em;
         }
 
         .hero-card p {
             margin: 1rem 0 0;
-            color: var(--text);
+            color: var(--text-primary);
             line-height: 1.75;
             max-width: 44rem;
         }
@@ -185,7 +186,7 @@
             border-radius: 14px;
             box-shadow: 0 8px 30px rgba(19,42,74,0.06);
             text-align: center;
-            color: var(--dark);
+            color: var(--text-primary);
             font-weight: 600;
             min-height: 115px;
             display: flex;
@@ -477,3 +478,5 @@
     </script>
 </body>
 </html>
+
+

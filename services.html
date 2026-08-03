@@ -8,12 +8,13 @@
     <style>
         :root {
             --white: #ffffff;
-            --light-blue: #5bbef7;
-            --dark-blue: #1b4f8c;
-            --soft-blue: #eff8ff;
-            --surface: rgba(255,255,255,0.92);
-            --body-text: #2c3e50;
-            --muted: #5d7187;
+            --primary: #2F80ED;
+            --text-primary: #1F2937;
+            --text-dark: #0F172A;
+            --primary-light: #EAF6FF;
+            --surface: #F8FCFF;
+            --text-secondary: #4B5563;
+            --border: #D6EAF8;
         }
 
         * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -27,7 +28,7 @@
 
         body {
             font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-            color: var(--body-text);
+            color: var(--text-primary);
             background: linear-gradient(180deg, #f9fcff 0%, #ffffff 100%);
             line-height: 1.7;
         }
@@ -57,7 +58,7 @@
         }
 
         .brand-link {
-            color: var(--dark-blue);
+            color: var(--text-primary);
             font-weight: 700;
             font-size: 1rem;
             text-decoration: none;
@@ -78,7 +79,7 @@
 
         .site-nav { display: none; gap: 1rem; flex-wrap: wrap; }
         .site-nav a {
-            color: var(--dark-blue);
+            color: var(--text-primary);
             text-decoration: none;
             font-weight: 600;
             padding: 0.7rem 1rem;
@@ -90,7 +91,7 @@
             .site-nav { display: flex !important; }
         }
         .site-nav a:hover,
-        .site-nav a.active { background: rgba(91,190,247,0.14); color: var(--light-blue); }
+        .site-nav a.active { background: rgba(91,190,247,0.14); color: var(--primary); }
 
         .hero { max-width: 1200px; margin: 2.5rem auto 1.5rem; padding: 0 5%; }
         .hero-top { display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 2rem; align-items: center; }
@@ -100,7 +101,7 @@
             padding: 0.55rem 1rem;
             background: rgba(91,190,247,0.12);
             border-radius: 999px;
-            color: var(--light-blue);
+            color: var(--primary);
             font-weight: 700;
             margin-bottom: 1rem;
             font-size: 0.9rem;
@@ -109,11 +110,11 @@
         .hero-copy h1 {
             font-size: clamp(2.25rem, 4vw, 3.5rem);
             line-height: 1.05;
-            color: var(--dark-blue);
+            color: var(--text-primary);
             margin-bottom: 1rem;
         }
 
-        .hero-copy p { color: var(--muted); font-size: 1rem; max-width: 580px; }
+        .hero-copy p { color: var(--text-secondary); font-size: 1rem; max-width: 580px; }
 
         .service-grid {
             max-width: 1200px;
@@ -146,7 +147,7 @@
             align-items: center;
             justify-content: center;
             background: rgba(91,190,247,0.06);
-            color: var(--light-blue);
+            color: var(--primary);
             font-size: 1.35rem;
             flex-shrink: 0;
         }
@@ -154,13 +155,13 @@
 
         .service-card h3 {
             font-size: 1.08rem;
-            color: var(--dark-blue);
+            color: var(--text-primary);
             margin: 0;
         }
 
-        .service-card p { color: var(--muted); line-height: 1.6; margin:0; }
+        .service-card p { color: var(--text-secondary); line-height: 1.6; margin:0; }
 
-        .service-card strong { color: var(--dark-blue); }
+        .service-card strong { color: var(--text-primary); }
 
         .service-card:hover {
             transform: translateY(-4px);
@@ -175,8 +176,8 @@
             text-align: center;
         }
 
-        .services-header h2 { margin: 0 0 0.5rem; font-size: clamp(1.6rem, 3vw, 2.25rem); color: var(--dark-blue); }
-        .services-header p { margin: 0 auto; max-width: 760px; color: var(--muted); line-height:1.6; }
+        .services-header h2 { margin: 0 0 0.5rem; font-size: clamp(1.6rem, 3vw, 2.25rem); color: var(--text-primary); }
+        .services-header p { margin: 0 auto; max-width: 760px; color: var(--text-secondary); line-height:1.6; }
 
         .cta-section {
             max-width: 1200px;
@@ -196,12 +197,12 @@
             box-shadow: 0 18px 55px rgba(19,42,74,0.06);
         }
 
-        .cta-box h2 { margin: 0; color: var(--dark-blue); font-size: clamp(1.5rem, 2vw, 2rem); }
-        .cta-box p { margin: 0; color: var(--muted); max-width: 700px; }
+        .cta-box h2 { margin: 0; color: var(--text-primary); font-size: clamp(1.5rem, 2vw, 2rem); }
+        .cta-box p { margin: 0; color: var(--text-secondary); max-width: 700px; }
         .cta-box .cta-actions { display: flex; gap: 1rem; flex-wrap: wrap; }
         .btn { display: inline-flex; align-items: center; justify-content: center; min-width: 145px; padding: 0.95rem 1.5rem; border-radius: 999px; border: none; cursor: pointer; text-decoration: none; font-weight: 700; transition: transform 0.2s ease, box-shadow 0.2s ease; }
-        .btn-primary { background: var(--light-blue); color: #fff; box-shadow: 0 12px 30px rgba(91,190,247,0.28); }
-        .btn-secondary { background: #fff; color: var(--dark-blue); border: 1px solid rgba(91,190,247,0.18); }
+        .btn-primary { background: var(--primary); color: #fff; box-shadow: 0 12px 30px rgba(91,190,247,0.28); }
+        .btn-secondary { background: #fff; color: var(--text-primary); border: 1px solid rgba(91,190,247,0.18); }
         .btn-primary:hover, .btn-secondary:hover { transform: translateY(-2px); }
 
         @media(max-width: 980px) { .hero-top { grid-template-columns: 1fr; } .service-grid { grid-template-columns: 1fr 1fr; } }
@@ -211,10 +212,10 @@
     /* Fix mobile dark-mode inversion and mobile nav layout */
     html { color-scheme: light; }
     .site-header { background: #ffffff; }
-    .site-header, .site-header .brand-link, .site-header .brand-logo img { color: var(--dark-blue); }
-    .site-nav a { color: var(--dark-blue); }
+    .site-header, .site-header .brand-link, .site-header .brand-logo img { color: var(--text-primary); }
+    .site-nav a { color: var(--text-primary); }
     @media (max-width: 768px) {
-      .site-nav a { display: block; padding: 0.8rem 1rem; color: var(--dark-blue); background: transparent; border-radius: 8px; }
+      .site-nav a { display: block; padding: 0.8rem 1rem; color: var(--text-primary); background: transparent; border-radius: 8px; }
       
       
     }
@@ -397,3 +398,5 @@
     </script>
 </body>
 </html>
+
+
