@@ -183,7 +183,74 @@
             width: 100%;
             height: 100%;
             background: linear-gradient(90deg, rgba(244, 251, 255, 0.95) 0%, rgba(244, 251, 255, 0.85) 40%, rgba(255, 255, 255, 0.4) 70%, rgba(255, 255, 255, 0.1) 100%);
-            z-index: -1;
+            z-index: 0;
+        }
+
+        /* Animated waterfall flow effect */
+        .hero-waterfall-layer {
+            position: absolute;
+            inset: 0;
+            z-index: 1;
+            background: linear-gradient(180deg, rgba(91, 190, 247, 0) 0%, rgba(91, 190, 247, 0.08) 30%, rgba(91, 190, 247, 0.12) 50%, rgba(91, 190, 247, 0.08) 70%, rgba(91, 190, 247, 0) 100%);
+            animation: waterfallFlow 8s linear infinite;
+            pointer-events: none;
+        }
+
+        @keyframes waterfallFlow {
+            0% { transform: translateY(-100%); opacity: 0; }
+            10% { opacity: 0.6; }
+            90% { opacity: 0.6; }
+            100% { transform: translateY(100%); opacity: 0; }
+        }
+
+        /* Animated mist drift effect */
+        .hero-mist-layer {
+            position: absolute;
+            inset: 0;
+            z-index: 1;
+            background: radial-gradient(ellipse at 50% 50%, rgba(255, 255, 255, 0.15) 0%, transparent 70%);
+            animation: mistDrift 12s ease-in-out infinite;
+            pointer-events: none;
+        }
+
+        @keyframes mistDrift {
+            0% { transform: translateX(-50px) translateY(-20px); opacity: 0.4; }
+            50% { transform: translateX(50px) translateY(20px); opacity: 0.6; }
+            100% { transform: translateX(-50px) translateY(-20px); opacity: 0.4; }
+        }
+
+        /* Peacock shimmer effect (right side) */
+        .hero-peacock-shimmer {
+            position: absolute;
+            right: 8%;
+            top: 20%;
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(91, 190, 247, 0.1) 0%, transparent 70%);
+            animation: peacockShimmer 4s ease-in-out infinite;
+            z-index: 2;
+            pointer-events: none;
+        }
+
+        @keyframes peacockShimmer {
+            0%, 100% { box-shadow: 0 0 20px rgba(91, 190, 247, 0.2), 0 0 40px rgba(91, 190, 247, 0.1); }
+            50% { box-shadow: 0 0 40px rgba(91, 190, 247, 0.4), 0 0 80px rgba(91, 190, 247, 0.2); }
+        }
+
+        /* Light rays effect */
+        .hero-light-rays {
+            position: absolute;
+            inset: 0;
+            z-index: 1;
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.05) 50%, rgba(255, 255, 255, 0) 100%);
+            animation: lightRaysShimmer 6s ease-in-out infinite;
+            pointer-events: none;
+        }
+
+        @keyframes lightRaysShimmer {
+            0%, 100% { opacity: 0.3; }
+            50% { opacity: 0.7; }
         }
 
         .hero-content {
@@ -196,6 +263,8 @@
             gap: 4rem;
             align-items: center;
             min-height: 100vh;
+            position: relative;
+            z-index: 3;
         }
 
         .doctor-preview {
@@ -703,12 +772,16 @@
     </div>
     <section class="hero">
         <div class="hero-bg-fallback"></div>
-        <div class="hero-bg" role="img" aria-label="Calming dental clinic interior with a modern dental chair, soft lighting, and relaxing atmosphere">
+        <div class="hero-bg" role="img" aria-label="Peaceful dental clinic with scenic waterfall view through large windows">
             <div class="hero-bg-image">
-                <img src="images/clinic-hero.svg" alt="Calm dental clinic interior illustration" loading="lazy" />
+                <img src="images/cc1.png" alt="Modern dental clinic with beautiful natural background" loading="lazy" />
             </div>
         </div>
         <div class="hero-overlay"></div>
+        <div class="hero-waterfall-layer" aria-hidden="true"></div>
+        <div class="hero-mist-layer" aria-hidden="true"></div>
+        <div class="hero-light-rays" aria-hidden="true"></div>
+        <div class="hero-peacock-shimmer" aria-hidden="true"></div>
 
                     </filter>
                     <filter id="softBlur" x="-20%" y="-20%" width="140%" height="140%">
