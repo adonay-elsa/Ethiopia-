@@ -125,7 +125,7 @@
             width: 100%;
             height: 120%;
             background-color: #eff9ff;
-            z-index: -2;
+            z-index: 1;
             will-change: transform;
             overflow: hidden;
         }
@@ -133,8 +133,10 @@
         .hero-bg-image {
             position: absolute;
             inset: 0;
-            z-index: -2;
+            z-index: 1;
             overflow: hidden;
+            width: 100%;
+            height: 100%;
         }
 
         .hero-bg-image img {
@@ -158,6 +160,12 @@
             display: none;
         }
 
+        @media (min-width: 768px) {
+            .hero-bg { display: block !important; }
+            .hero-bg-image { display: block !important; }
+            .hero-bg-image img { display: block !important; }
+        }
+
         .hero-bg-fallback {
             position: absolute;
             top: 0;
@@ -167,7 +175,7 @@
             background: radial-gradient(circle at 20% 18%, rgba(255, 255, 255, 0.96), transparent 26%),
                         radial-gradient(circle at 86% 26%, rgba(91, 190, 247, 0.22), transparent 16%),
                         linear-gradient(145deg, #d7f0ff 0%, #eaf8ff 34%, #ffffff 100%);
-            z-index: -3;
+            z-index: 0;
         }
 
         .hero {
@@ -183,14 +191,15 @@
             width: 100%;
             height: 100%;
             background: linear-gradient(90deg, rgba(244, 251, 255, 0.95) 0%, rgba(244, 251, 255, 0.85) 40%, rgba(255, 255, 255, 0.4) 70%, rgba(255, 255, 255, 0.1) 100%);
-            z-index: 0;
+            z-index: 1.5;
+            pointer-events: none;
         }
 
         /* Animated waterfall flow effect */
         .hero-waterfall-layer {
             position: absolute;
             inset: 0;
-            z-index: 1;
+            z-index: 1.3;
             background: linear-gradient(180deg, rgba(91, 190, 247, 0) 0%, rgba(91, 190, 247, 0.08) 30%, rgba(91, 190, 247, 0.12) 50%, rgba(91, 190, 247, 0.08) 70%, rgba(91, 190, 247, 0) 100%);
             animation: waterfallFlow 8s linear infinite;
             pointer-events: none;
@@ -207,7 +216,7 @@
         .hero-mist-layer {
             position: absolute;
             inset: 0;
-            z-index: 1;
+            z-index: 1.2;
             background: radial-gradient(ellipse at 50% 50%, rgba(255, 255, 255, 0.15) 0%, transparent 70%);
             animation: mistDrift 12s ease-in-out infinite;
             pointer-events: none;
@@ -229,7 +238,7 @@
             border-radius: 50%;
             background: radial-gradient(circle, rgba(91, 190, 247, 0.1) 0%, transparent 70%);
             animation: peacockShimmer 4s ease-in-out infinite;
-            z-index: 2;
+            z-index: 1.4;
             pointer-events: none;
         }
 
@@ -242,7 +251,7 @@
         .hero-light-rays {
             position: absolute;
             inset: 0;
-            z-index: 1;
+            z-index: 1.1;
             background: linear-gradient(135deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.05) 50%, rgba(255, 255, 255, 0) 100%);
             animation: lightRaysShimmer 6s ease-in-out infinite;
             pointer-events: none;
@@ -264,7 +273,7 @@
             align-items: center;
             min-height: 100vh;
             position: relative;
-            z-index: 3;
+            z-index: 10;
         }
 
         .doctor-preview {
@@ -724,7 +733,6 @@
       .card, .cards { grid-template-columns:1fr; }
       .portrait { width:100%; max-width:none; }
       .hero-right { display:none; }
-      .hero-bg, .hero-bg-image { display:none !important; }
       .hero-bg-fallback { height:auto; background: linear-gradient(180deg, #f7fbff 0%, #ffffff 100%); }
       .btn, .btn-primary, .btn-secondary, .mobile-action, .contact-card-button { min-height:56px; border-radius:16px; }
       .btn { padding:16px 18px; width:100%; max-width:100%; }
@@ -774,7 +782,7 @@
         <div class="hero-bg-fallback"></div>
         <div class="hero-bg" role="img" aria-label="Peaceful dental clinic with scenic waterfall view through large windows">
             <div class="hero-bg-image">
-                <img src="images/cc1.png" alt="Modern dental clinic with beautiful natural background" loading="lazy" />
+                <img src="images/cc1.png" alt="Modern dental clinic with beautiful natural background" />
             </div>
         </div>
         <div class="hero-overlay"></div>
