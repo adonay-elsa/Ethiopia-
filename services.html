@@ -15,6 +15,9 @@
             --surface: #F8FCFF;
             --text-secondary: #4B5563;
             --border: #D6EAF8;
+            --green: #36C35D;
+            --green-light: #e8f8f0;
+            --green-dark: #2ab553;
         }
 
         * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -146,10 +149,16 @@
             display: inline-flex;
             align-items: center;
             justify-content: center;
-            background: rgba(91,190,247,0.06);
-            color: var(--primary);
-            font-size: 1.35rem;
+            background: var(--primary-light);
             flex-shrink: 0;
+            overflow: hidden;
+            border: 1px solid rgba(47, 128, 237, 0.08);
+        }
+
+        .service-card .service-icon img {
+            width: 32px;
+            height: 32px;
+            object-fit: contain;
         }
 
 
@@ -201,8 +210,8 @@
         .cta-box p { margin: 0; color: var(--text-secondary); max-width: 700px; }
         .cta-box .cta-actions { display: flex; gap: 1rem; flex-wrap: wrap; }
         .btn { display: inline-flex; align-items: center; justify-content: center; min-width: 145px; padding: 0.95rem 1.5rem; border-radius: 999px; border: none; cursor: pointer; text-decoration: none; font-weight: 700; transition: transform 0.2s ease, box-shadow 0.2s ease; }
-        .btn-primary { background: var(--primary); color: #fff; box-shadow: 0 12px 30px rgba(91,190,247,0.28); }
-        .btn-secondary { background: #fff; color: var(--text-primary); border: 1px solid rgba(91,190,247,0.18); }
+        .btn-primary { background: var(--green); color: #fff; box-shadow: 0 12px 30px rgba(54, 195, 93, 0.28); }
+        .btn-secondary { background: #fff; color: var(--text-primary); border: 1px solid rgba(47, 128, 237, 0.18); }
         .btn-primary:hover, .btn-secondary:hover { transform: translateY(-2px); }
 
         @media(max-width: 980px) { .hero-top { grid-template-columns: 1fr; } .service-grid { grid-template-columns: 1fr 1fr; } }
@@ -316,39 +325,54 @@
 
     <section class="services-header">
         <h2>Our Services</h2>
-        <p>Comprehensive dental care delivered with compassion and modern techniques — from preventive checkups to specialized restorative and cosmetic treatments.</p>
+        <p>Comprehensive dental care delivered with compassion and modern techniques — from preventive checkups to specialized restorative and cosmetic treatments. Our service range is informed by the leading standards of Dr. Emibet Dental Clinic, Ethiopia's pioneer in advanced dental care.</p>
     </section>
 
     <section class="service-grid">
         <article class="service-card">
-            <div class="service-icon">🦷</div>
+            <div class="service-icon"><img src="images/services/service-preventive.svg" alt="Preventive Care" /></div>
             <h3>Preventive Care</h3>
-            <p>Routine exams, professional cleaning, fluoride protection, and patient education to keep your smile healthy and avoid future treatment.</p>
+            <p>Routine exams, professional cleaning, fluoride protection, and patient education to keep your smile healthy and avoid future treatment. Following the proactive screening model used at Dr. Emibet Dental Clinic.</p>
         </article>
         <article class="service-card">
-            <div class="service-icon">✨</div>
+            <div class="service-icon"><img src="images/services/service-cosmetic.svg" alt="Cosmetic Dentistry" /></div>
             <h3>Cosmetic Dentistry</h3>
-            <p>Whitening, smile-enhancing restorations, and aesthetic consultation to help you achieve a brighter, confident smile.</p>
+            <p>Whitening, smile-enhancing restorations, and aesthetic consultation to help you achieve a brighter, confident smile. Includes bleaching and veneer options modeled on leading Ethiopian cosmetic practices.</p>
         </article>
         <article class="service-card">
-            <div class="service-icon">🛠️</div>
+            <div class="service-icon"><img src="images/services/service-restorative.svg" alt="Restorative Care" /></div>
             <h3>Restorative Care</h3>
-            <p>Fillings, crowns, bridges, and full-mouth rehabilitation designed to restore strength, function, and appearance.</p>
+            <p>Fillings, crowns, bridges, and full-mouth rehabilitation designed to restore strength, function, and appearance. We use durable composite, porcelain, and zirconia materials for lasting results.</p>
         </article>
         <article class="service-card">
-            <div class="service-icon">🦷</div>
+            <div class="service-icon"><img src="images/services/service-extraction.svg" alt="Oral Surgery" /></div>
             <h3>Oral Surgery & Tooth Extraction</h3>
-            <p>Safe extraction, wisdom tooth removal, and surgical care with modern techniques and gentle post-operative support.</p>
+            <p>Safe extraction, wisdom tooth removal, and surgical care with modern techniques and gentle post-operative support. From normal extractions to surgical procedures, your comfort is our priority.</p>
         </article>
         <article class="service-card">
-            <div class="service-icon">🧩</div>
-            <h3>Orthodontic Support</h3>
-            <p>Braces guidance, aligner planning, and bite correction services to help patients of all ages achieve better alignment.</p>
+            <div class="service-icon"><img src="images/services/service-orthodontic.svg" alt="Orthodontics" /></div>
+            <h3>Orthodontic Treatment</h3>
+            <p>Traditional braces and modern aligner solutions for patients of all ages. Improve alignment, bite, and smile confidence with personalized orthodontic planning.</p>
         </article>
         <article class="service-card">
-            <div class="service-icon">🥼</div>
+            <div class="service-icon"><img src="images/services/service-pediatric.svg" alt="Pediatric Dentistry" /></div>
             <h3>Pediatric & Family Dentistry</h3>
-            <p>Family-friendly dental care for children and adults, with a warm clinic atmosphere and easy appointment support.</p>
+            <p>Family-friendly dental care for children and adults, with a warm clinic atmosphere and easy appointment support. Gentle approaches tailored for young patients.</p>
+        </article>
+        <article class="service-card">
+            <div class="service-icon"><img src="images/services/service-rootcanal.svg" alt="Root Canal" /></div>
+            <h3>Root Canal Treatment</h3>
+            <p>Expert endodontic care to save natural teeth from severe decay or infection. Using modern techniques for a comfortable, efficient procedure that preserves your smile.</p>
+        </article>
+        <article class="service-card">
+            <div class="service-icon"><img src="images/services/service-implants.svg" alt="Dental Implants" /></div>
+            <h3>Dental Implants</h3>
+            <p>Permanent tooth replacement options that look, feel, and function like natural teeth. Includes bone graft support for ideal implant stability and long-term success.</p>
+        </article>
+        <article class="service-card">
+            <div class="service-icon"><img src="images/services/service-periodontal.svg" alt="Periodontal Care" /></div>
+            <h3>Periodontal Care</h3>
+            <p>Deep scaling, root planing, and gum disease treatment to protect the foundation of your smile. Preventive periodontal therapy for healthy gums and lasting oral health.</p>
         </article>
     </section>
 

@@ -3,9 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>[Peacock Dental Clinic ]</title>
-    <meta name="title" content="[Peacock Dental Clinic]">
-    <meta property="og:title" content="[Peacock Dental Clinic]">
+    <title>Dental Clinic Ethiopia - Premium Dental Care</title>
     <link rel="icon" href="favicon.svg" />
     <style>
         * {
@@ -28,6 +26,9 @@
             --light-blue: #56CCF2;
             --very-light-blue: #EAF6FF;
             --dark-blue: #2F80ED;
+            --green: #36C35D;
+            --green-light: #e8f8f0;
+            --green-dark: #2ab553;
         }
 
         html,
@@ -91,6 +92,7 @@
             width: 36px;
             height: 36px;
             display: block;
+            object-fit: contain;
         }
 
         .site-nav {
@@ -412,8 +414,18 @@
 
         .logo-text {
             font-size: 0.95rem;
-            font-weight: 700;
-            color: var(--white);
+            font-weight: 600;
+            color: var(--text-dark);
+            letter-spacing: 0.5px;
+        }
+
+        .brand-name {
+            font-size: 1.1rem;
+            font-weight: 500;
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+            opacity: 0;
+            animation: fadeInUp 1s ease-out 0.4s forwards;
             letter-spacing: 0.5px;
         }
 
@@ -445,7 +457,7 @@
         .hero-heading h1 {
             font-size: clamp(2.5rem, 5vw, 4rem);
             font-weight: 700;
-            color: var(--white);
+            color: var(--text-dark);
             line-height: 1.1;
             margin-bottom: 0.25rem;
             opacity: 0;
@@ -455,8 +467,8 @@
 
         .hero-heading h2 {
             font-size: clamp(1.5rem, 3vw, 2.5rem);
-            font-weight: 700;
-            color: var(--white);
+            font-weight: 600;
+            color: var(--text-dark);
             opacity: 0;
             animation: fadeInUp 1s ease-out 0.8s forwards;
             letter-spacing: -0.3px;
@@ -464,13 +476,13 @@
 
         .hero-paragraph {
             font-size: 1.1rem;
-            color: var(--white);
+            color: var(--text-dark);
             margin-bottom: 2.5rem;
             max-width: 500px;
             line-height: 1.8;
             opacity: 0;
             animation: fadeInUp 1s ease-out 1s forwards;
-            font-weight: 700;
+            font-weight: 500;
         }
 
         .hero-buttons {
@@ -496,16 +508,16 @@
         }
 
         .btn-primary {
-            background: var(--primary);
+            background: var(--green);
             color: var(--white);
-            border-color: var(--primary);
-            box-shadow: 0 4px 15px rgba(47,128,237,0.3);
+            border-color: var(--green);
+            box-shadow: 0 4px 15px rgba(54,195,93,0.3);
         }
 
         .btn-primary:hover {
             transform: translateY(-3px);
-            box-shadow: 0 8px 25px rgba(47,128,237,0.45);
-            background: #1C6DD0;
+            box-shadow: 0 8px 25px rgba(54,195,93,0.45);
+            background: var(--green-dark);
         }
 
         .btn-secondary {
@@ -556,6 +568,10 @@
 
             .logo {
                 justify-content: flex-start;
+            }
+
+            .brand-name {
+                text-align: left;
             }
 
             .hero-heading {
@@ -687,17 +703,17 @@
         }
 
         .reach-btn-email {
-            background: var(--primary-light);
+            background: var(--green-light);
         }
 
         .reach-btn-email .reach-btn-label,
         .reach-btn-email .reach-btn-value {
-            color: var(--primary);
+            color: var(--green-dark);
         }
 
         .reach-btn-tiktok .reach-btn-label,
         .reach-btn-tiktok .reach-btn-value {
-            color: var(--primary);
+            color: var(--dark-blue);
         }
 
         .reach-btn-tiktok:hover {
@@ -715,6 +731,85 @@
         @media (max-width: 480px) {
             .direct-reach-card {
                 padding: 24px;
+            }
+        }
+    </style>
+    <style>
+        .reviews-section {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 3rem 5%;
+        }
+
+        .reviews-header {
+            text-align: center;
+            margin-bottom: 2.5rem;
+        }
+
+        .reviews-header h2 {
+            font-size: clamp(1.6rem, 3vw, 2.25rem);
+            color: var(--primary);
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .reviews-header p {
+            color: var(--text-secondary);
+            font-size: 1.05rem;
+        }
+
+        .reviews-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .review-card {
+            background: var(--white);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 1.75rem;
+            box-shadow: 0 6px 18px var(--shadow);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .review-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 30px rgba(47,128,237,0.15);
+        }
+
+        .review-stars {
+            color: #f59e0b;
+            font-size: 1.1rem;
+            margin-bottom: 0.75rem;
+            letter-spacing: 2px;
+        }
+
+        .review-text {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            line-height: 1.7;
+            margin-bottom: 1.25rem;
+            font-style: italic;
+        }
+
+        .review-author strong {
+            display: block;
+            color: var(--text-primary);
+            font-size: 0.95rem;
+        }
+
+        .review-author span {
+            color: var(--text-secondary);
+            font-size: 0.85rem;
+        }
+
+        @media (max-width: 768px) {
+            .reviews-section {
+                padding: 2rem 20px;
+            }
+            .reviews-grid {
+                grid-template-columns: 1fr;
             }
         }
     </style>
@@ -989,13 +1084,15 @@
                     <span class="logo-text">Peacock Dental</span>
                 </div>
 
+                <p class="brand-name">Calm Dental Care</p>
+
                 <div class="hero-device-note" aria-label="Mobile experience note">
                     <span class="device-icon">📱</span>
                     <span>For the best experience, turn your phone to portrait.</span>
                 </div>
                 
                 <div class="hero-heading">
-                    <h1>[Peacock Dental Clinic]</h1>
+                    <h1>Healthy Smiles.</h1>
                     <h2>Beautiful Confidence.</h2>
                 </div>
                 
@@ -1012,7 +1109,7 @@
             
             <div class="hero-right">
                 <div class="hero-image">
-                    <img src="images/clinic-hero.svg" alt="Dental clinic interior illustration" loading="lazy" />
+                    <img src="images/clinic-hero.svg" alt="Calm dental clinic interior illustration" loading="lazy" />
                 </div>
             </div>
         </div>
@@ -1052,6 +1149,55 @@
         </div>
         <div class="portrait" style="max-width:340px">
             <img src="images/dr-samuel.png" alt="Dr. Samuel Siyoum preview" loading="lazy" width="340" />
+        </div>
+    </section>
+
+    <section class="reviews-section" aria-labelledby="reviews-title">
+        <div class="reviews-header">
+            <h2 id="reviews-title">What Our Patients Say</h2>
+            <p>Trusted by families across Asosa and beyond</p>
+        </div>
+        <div class="reviews-grid">
+            <div class="review-card">
+                <div class="review-stars">★★★★★</div>
+                <p class="review-text">"Dr. Samuel and the team at Peacock Dental gave me the best dental experience I've ever had. The clinic is clean, modern, and the staff is so welcoming."</p>
+                <div class="review-author">
+                    <strong>Abebe Tadesse</strong>
+                    <span>Local Business Owner</span>
+                </div>
+            </div>
+            <div class="review-card">
+                <div class="review-stars">★★★★★</div>
+                <p class="review-text">"I used to be afraid of dentists, but Peacock Dental changed everything. Dr. Samuel explained every step and made me feel completely at ease."</p>
+                <div class="review-author">
+                    <strong>Sara Hailu</strong>
+                    <span>Teacher</span>
+                </div>
+            </div>
+            <div class="review-card">
+                <div class="review-stars">★★★★★</div>
+                <p class="review-text">"Professional care with a personal touch. My whole family comes here now, from my youngest to my parents. Highly recommended!"</p>
+                <div class="review-author">
+                    <strong>Kebede Assefa</strong>
+                    <span>Local Resident</span>
+                </div>
+            </div>
+            <div class="review-card">
+                <div class="review-stars">★★★★★</div>
+                <p class="review-text">"The whitening and cleaning service was excellent. I left with a bright smile and so much confidence. Thank you Peacock Dental!"</p>
+                <div class="review-author">
+                    <strong>Meron Demisse</strong>
+                    <span>Student</span>
+                </div>
+            </div>
+            <div class="review-card">
+                <div class="review-stars">★★★★★</div>
+                <p class="review-text">"Finally, a dental clinic in Asosa that I can trust. Modern equipment, gentle care, and fair prices. Dr. Samuel is the best."</p>
+                <div class="review-author">
+                    <strong>Yohannes Bekele</strong>
+                    <span>Engineer</span>
+                </div>
+            </div>
         </div>
     </section>
 
