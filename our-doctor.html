@@ -3,8 +3,22 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Our Doctor - Dr. Samuel Siyoum | Peacock Dental Ethiopia</title>
-    <link rel="icon" href="favicon.svg" />
+    <title>Our Doctor - Dr. Samuel Siyoum | Peacock Dental Clinic</title>
+    <link rel="icon" type="image/png" href="images/logo.png" />
+    <link rel="apple-touch-icon" href="images/logo.png" />
+    <meta property="og:image" content="https://peacockdentalclinic.netlify.app/images/logo.png" />
+    <meta property="og:image:type" content="image/png" />
+    <meta property="og:image:width" content="512" />
+    <meta property="og:image:height" content="512" />
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Dentist",
+      "name": "Peacock Dental Clinic",
+      "url": "https://peacockdentalclinic.netlify.app",
+      "logo": "https://peacockdentalclinic.netlify.app/images/logo.png"
+    }
+    </script>
     <style>
         :root {
             --white: #ffffff;
@@ -18,6 +32,13 @@
             --green: #36C35D;
             --green-light: #e8f8f0;
             --green-dark: #2ab553;
+            --red: #E53E3E;
+            --red-light: #FFF5F5;
+            --red-dark: #C53030;
+            --orange: #ED8936;
+            --orange-light: #FFFBD5;
+            --purple: #805AD5;
+            --purple-light: #FAF5FF;
         }
 
         *, *::before, *::after {
@@ -135,20 +156,21 @@
             background: var(--surface);
             border-radius: 20px;
             padding: 2rem;
-            box-shadow: 0 10px 40px rgba(0,0,0,0.06);
+            box-shadow: 0 10px 40px rgba(229, 62, 62, 0.08);
+            border: 1px solid rgba(229, 62, 62, 0.08);
         }
 
         .hero-card h1 {
             margin: 0 0 1rem;
             font-size: clamp(2rem, 3.5vw, 2.6rem);
             line-height: 1.05;
-            color: var(--text-primary);
+            color: var(--red);
         }
 
         .sub {
             display: inline-flex;
             margin-bottom: 1rem;
-            color: var(--primary);
+            color: var(--green-dark);
             font-weight: 700;
             letter-spacing: 0.01em;
         }
@@ -184,7 +206,7 @@
         }
 
         .card {
-            background: var(--white);
+            background: var(--green-light);
             padding: 1rem;
             border-radius: 14px;
             box-shadow: 0 8px 30px rgba(19,42,74,0.06);
@@ -385,6 +407,109 @@
                 font-size: 0.98rem;
             }
         }
+
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(24px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.08); }
+        }
+
+        @keyframes shimmer {
+            0% { background-position: -200% center; }
+            100% { background-position: 200% center; }
+        }
+
+        .credentials-section {
+            margin-top: 2rem;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.25rem;
+        }
+
+        .credential-card {
+            background: var(--green-light);
+            border: 1px solid rgba(54, 195, 93, 0.15);
+            border-radius: 16px;
+            padding: 1.5rem;
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            opacity: 0;
+            animation: fadeInUp 0.7s ease-out forwards;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .credential-card:nth-child(1) { animation-delay: 0.1s; }
+        .credential-card:nth-child(2) { animation-delay: 0.25s; }
+        .credential-card:nth-child(3) { animation-delay: 0.4s; }
+        .credential-card:nth-child(4) { animation-delay: 0.55s; }
+
+        .credential-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 16px 40px rgba(54, 195, 93, 0.15);
+        }
+
+        .credential-icon {
+            width: 48px;
+            height: 48px;
+            min-width: 48px;
+            background: linear-gradient(135deg, var(--green), var(--green-dark));
+            border-radius: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.4rem;
+            color: #fff;
+            box-shadow: 0 8px 20px rgba(54, 195, 93, 0.25);
+            animation: pulse 2.5s ease-in-out infinite;
+        }
+
+        .credential-card:nth-child(2) .credential-icon {
+            background: linear-gradient(135deg, #2F80ED, #1b6fc3);
+            box-shadow: 0 8px 20px rgba(47, 128, 237, 0.25);
+            animation-delay: 0.3s;
+        }
+
+        .credential-card:nth-child(3) .credential-icon {
+            background: linear-gradient(135deg, var(--red), var(--red-dark));
+            box-shadow: 0 8px 20px rgba(229, 62, 62, 0.25);
+            animation-delay: 0.6s;
+        }
+
+        .credential-card:nth-child(4) .credential-icon {
+            background: linear-gradient(135deg, var(--orange), #c05621);
+            box-shadow: 0 8px 20px rgba(237, 137, 54, 0.25);
+            animation-delay: 0.9s;
+        }
+
+        .credential-text h4 {
+            margin: 0 0 0.35rem;
+            font-size: 1rem;
+            color: var(--text-primary);
+            font-weight: 700;
+        }
+
+        .credential-text p {
+            margin: 0;
+            font-size: 0.92rem;
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+
+        .credential-text .highlight {
+            color: var(--green-dark);
+            font-weight: 700;
+        }
+
+        @media (max-width: 768px) {
+            .credentials-section {
+                grid-template-columns: 1fr;
+            }
+        }
     </style>
 </head>
 <body>
@@ -429,9 +554,40 @@
             <div class="hero-card">
                 <h1>Meet Our Distinguished Head Dentist</h1>
                 <div class="sub">Dr. Samuel Siyoum — Head Dentist</div>
-                <p>Dr. Samuel Siyoum leads Peacock Dental Ethiopia with a commitment to ethical, patient-centered, and modern dental care. His approach combines clinical excellence, precision, and compassion, ensuring that every patient receives personalized treatment in a comfortable and welcoming environment.</p>
+                <p>Dr. Samuel Siyoum leads Peacock Dental Clinic with a commitment to ethical, patient-centered, and modern dental care. His approach combines clinical excellence, precision, and compassion, ensuring that every patient receives personalized treatment in a comfortable and welcoming environment.</p>
                 <p>Dedicated to continuous learning and the adoption of advanced dental technologies, he helps patients achieve healthy, confident smiles through preventive, restorative, and cosmetic dentistry.</p>
-                <p><strong>Credentials:</strong> Dr. Samuel Siyoum brings over 15 years of clinical experience to Peacock Dental Ethiopia. He earned his dental degree from the prestigious Addis Ababa University, one of Ethiopia's leading institutions, and has since built a reputation for advanced, patient-focused care.</p>
+                <p><strong>Credentials:</strong> Dr. Samuel Siyoum brings over 15 years of clinical experience to Peacock Dental Clinic. He earned his dental degree from the prestigious Addis Ababa University, one of Ethiopia's leading institutions, and has since built a reputation for advanced, patient-focused care.</p>
+
+                <div class="credentials-section" aria-label="Doctor credentials">
+                    <div class="credential-card">
+                        <div class="credential-icon">🏆</div>
+                        <div class="credential-text">
+                            <h4>15+ Years of Excellence</h4>
+                            <p>More than <span class="highlight">15 years</span> of hands-on clinical experience delivering outstanding dental care and building long-lasting patient relationships.</p>
+                        </div>
+                    </div>
+                    <div class="credential-card">
+                        <div class="credential-icon">🎓</div>
+                        <div class="credential-text">
+                            <h4>Prestigious Education</h4>
+                            <p>Graduated from <span class="highlight">Addis Ababa University</span>, Ethiopia's premier institution for dental medicine and oral health sciences.</p>
+                        </div>
+                    </div>
+                    <div class="credential-card">
+                        <div class="credential-icon">⭐</div>
+                        <div class="credential-text">
+                            <h4>Advanced Expertise</h4>
+                            <p>Specialized training in <span class="highlight">preventive, restorative, and cosmetic dentistry</span> with a gentle, patient-first approach.</p>
+                        </div>
+                    </div>
+                    <div class="credential-card">
+                        <div class="credential-icon">🤝</div>
+                        <div class="credential-text">
+                            <h4>Trusted by Thousands</h4>
+                            <p>Known for <span class="highlight">ethical practice, compassion, and modern technology</span> that makes every visit comfortable and confident.</p>
+                        </div>
+                    </div>
+                </div>
 
                 <div class="cards" aria-hidden="false">
                     <div class="card">Patient-Centered Care</div>

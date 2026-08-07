@@ -3,8 +3,22 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Services - Peacock Dental Ethiopia</title>
-    <link rel="icon" href="favicon.svg" />
+    <title>Services - Peacock Dental Clinic</title>
+    <link rel="icon" type="image/png" href="images/logo.png" />
+    <link rel="apple-touch-icon" href="images/logo.png" />
+    <meta property="og:image" content="https://peacockdentalclinic.netlify.app/images/logo.png" />
+    <meta property="og:image:type" content="image/png" />
+    <meta property="og:image:width" content="512" />
+    <meta property="og:image:height" content="512" />
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Dentist",
+      "name": "Peacock Dental Clinic",
+      "url": "https://peacockdentalclinic.netlify.app",
+      "logo": "https://peacockdentalclinic.netlify.app/images/logo.png"
+    }
+    </script>
     <style>
         :root {
             --white: #ffffff;
@@ -18,6 +32,13 @@
             --green: #36C35D;
             --green-light: #e8f8f0;
             --green-dark: #2ab553;
+            --red: #E53E3E;
+            --red-light: #FFF5F5;
+            --red-dark: #C53030;
+            --orange: #ED8936;
+            --orange-light: #FFFBD5;
+            --purple: #805AD5;
+            --purple-light: #FAF5FF;
         }
 
         * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -102,9 +123,9 @@
         .hero-copy .eyebrow {
             display: inline-flex;
             padding: 0.55rem 1rem;
-            background: rgba(91,190,247,0.12);
+            background: var(--green-light);
             border-radius: 999px;
-            color: var(--primary);
+            color: var(--green-dark);
             font-weight: 700;
             margin-bottom: 1rem;
             font-size: 0.9rem;
@@ -131,50 +152,60 @@
         /* Cleaner service cards */
         .service-card {
             background: var(--white);
-            border: 1px solid rgba(91,190,247,0.08);
-            border-radius: 16px;
-            padding: 1.5rem;
-            box-shadow: 0 6px 18px rgba(19,42,74,0.06);
+            border: 1px solid rgba(54, 195, 93, 0.12);
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 8px 24px rgba(19,42,74,0.06);
             display: flex;
             flex-direction: column;
-            gap: 0.75rem;
-            min-height: 180px;
-            transition: transform 0.18s ease, box-shadow 0.18s ease;
+            gap: 0;
+            min-height: 320px;
+            transition: transform 0.25s ease, box-shadow 0.25s ease;
         }
 
-        .service-card .service-icon {
-            width: 52px;
-            height: 52px;
-            border-radius: 12px;
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            background: var(--primary-light);
-            flex-shrink: 0;
+        .service-card .service-image {
+            width: 100%;
+            height: 180px;
             overflow: hidden;
-            border: 1px solid rgba(47, 128, 237, 0.08);
+            background: var(--green-light);
+            border-bottom: 1px solid rgba(54, 195, 93, 0.1);
         }
 
-        .service-card .service-icon img {
-            width: 32px;
-            height: 32px;
-            object-fit: contain;
+        .service-card .service-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.4s ease;
         }
 
+        .service-card:hover .service-image img {
+            transform: scale(1.05);
+        }
+
+        .service-card .service-content {
+            padding: 1.5rem;
+            display: flex;
+            flex-direction: column;
+            gap: 0.6rem;
+            flex: 1;
+        }
 
         .service-card h3 {
-            font-size: 1.08rem;
+            font-size: 1.15rem;
             color: var(--text-primary);
             margin: 0;
+            font-weight: 700;
         }
 
-        .service-card p { color: var(--text-secondary); line-height: 1.6; margin:0; }
+        .service-card p { color: var(--text-secondary); line-height: 1.7; margin:0; font-size: 0.95rem; }
 
         .service-card strong { color: var(--text-primary); }
 
         .service-card:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 18px 45px rgba(19,42,74,0.10);
+            transform: translateY(-6px);
+            box-shadow: 0 20px 50px rgba(19,42,74,0.1);
+            border-color: rgba(54, 195, 93, 0.25);
         }
 
         /* Services section header */
@@ -185,7 +216,7 @@
             text-align: center;
         }
 
-        .services-header h2 { margin: 0 0 0.5rem; font-size: clamp(1.6rem, 3vw, 2.25rem); color: var(--text-primary); }
+        .services-header h2 { margin: 0 0 0.5rem; font-size: clamp(1.6rem, 3vw, 2.25rem); color: var(--red); }
         .services-header p { margin: 0 auto; max-width: 760px; color: var(--text-secondary); line-height:1.6; }
 
         .cta-section {
@@ -199,14 +230,14 @@
             align-items: center;
             justify-content: space-between;
             gap: 1rem;
-            border: 1px solid rgba(91,190,247,0.18);
-            background: rgba(244,251,255,0.9);
+            border: 1px solid rgba(54, 195, 93, 0.18);
+            background: linear-gradient(135deg, var(--green-light) 0%, var(--white) 100%);
             border-radius: 24px;
             padding: 2rem;
             box-shadow: 0 18px 55px rgba(19,42,74,0.06);
         }
 
-        .cta-box h2 { margin: 0; color: var(--text-primary); font-size: clamp(1.5rem, 2vw, 2rem); }
+        .cta-box h2 { margin: 0; color: var(--red); font-size: clamp(1.5rem, 2vw, 2rem); }
         .cta-box p { margin: 0; color: var(--text-secondary); max-width: 700px; }
         .cta-box .cta-actions { display: flex; gap: 1rem; flex-wrap: wrap; }
         .btn { display: inline-flex; align-items: center; justify-content: center; min-width: 145px; padding: 0.95rem 1.5rem; border-radius: 999px; border: none; cursor: pointer; text-decoration: none; font-weight: 700; transition: transform 0.2s ease, box-shadow 0.2s ease; }
@@ -330,49 +361,85 @@
 
     <section class="service-grid">
         <article class="service-card">
-            <div class="service-icon"><img src="images/services/service-preventive.svg" alt="Preventive Care" /></div>
-            <h3>Preventive Care</h3>
-            <p>Routine exams, professional cleaning, fluoride protection, and patient education to keep your smile healthy and avoid future treatment. Following the proactive screening model used at Dr. Emibet Dental Clinic.</p>
+            <div class="service-image">
+                <img src="images/services/service-preventive.svg" alt="Preventive dental care - routine checkup and cleaning" loading="lazy" />
+            </div>
+            <div class="service-content">
+                <h3>Preventive Care</h3>
+                <p>Routine exams, professional cleaning, fluoride protection, and patient education to keep your smile healthy and avoid future treatment. Following the proactive screening model used at Dr. Emibet Dental Clinic.</p>
+            </div>
         </article>
         <article class="service-card">
-            <div class="service-icon"><img src="images/services/service-cosmetic.svg" alt="Cosmetic Dentistry" /></div>
-            <h3>Cosmetic Dentistry</h3>
-            <p>Whitening, smile-enhancing restorations, and aesthetic consultation to help you achieve a brighter, confident smile. Includes bleaching and veneer options modeled on leading Ethiopian cosmetic practices.</p>
+            <div class="service-image">
+                <img src="images/services/service-cosmetic.svg" alt="Cosmetic dentistry - whitening and smile design" loading="lazy" />
+            </div>
+            <div class="service-content">
+                <h3>Cosmetic Dentistry</h3>
+                <p>Whitening, smile-enhancing restorations, and aesthetic consultation to help you achieve a brighter, confident smile. Includes bleaching and veneer options modeled on leading Ethiopian cosmetic practices.</p>
+            </div>
         </article>
         <article class="service-card">
-            <div class="service-icon"><img src="images/services/service-restorative.svg" alt="Restorative Care" /></div>
-            <h3>Restorative Care</h3>
-            <p>Fillings, crowns, bridges, and full-mouth rehabilitation designed to restore strength, function, and appearance. We use durable composite, porcelain, and zirconia materials for lasting results.</p>
+            <div class="service-image">
+                <img src="images/services/service-restorative.svg" alt="Restorative care - crowns and fillings" loading="lazy" />
+            </div>
+            <div class="service-content">
+                <h3>Restorative Care</h3>
+                <p>Fillings, crowns, bridges, and full-mouth rehabilitation designed to restore strength, function, and appearance. We use durable composite, porcelain, and zirconia materials for lasting results.</p>
+            </div>
         </article>
         <article class="service-card">
-            <div class="service-icon"><img src="images/services/service-extraction.svg" alt="Oral Surgery" /></div>
-            <h3>Oral Surgery & Tooth Extraction</h3>
-            <p>Safe extraction, wisdom tooth removal, and surgical care with modern techniques and gentle post-operative support. From normal extractions to surgical procedures, your comfort is our priority.</p>
+            <div class="service-image">
+                <img src="images/services/service-extraction.svg" alt="Oral surgery and tooth extraction" loading="lazy" />
+            </div>
+            <div class="service-content">
+                <h3>Oral Surgery & Tooth Extraction</h3>
+                <p>Safe extraction, wisdom tooth removal, and surgical care with modern techniques and gentle post-operative support. From normal extractions to surgical procedures, your comfort is our priority.</p>
+            </div>
         </article>
         <article class="service-card">
-            <div class="service-icon"><img src="images/services/service-orthodontic.svg" alt="Orthodontics" /></div>
-            <h3>Orthodontic Treatment</h3>
-            <p>Traditional braces and modern aligner solutions for patients of all ages. Improve alignment, bite, and smile confidence with personalized orthodontic planning.</p>
+            <div class="service-image">
+                <img src="images/services/service-orthodontic.svg" alt="Orthodontic treatment - braces and aligners" loading="lazy" />
+            </div>
+            <div class="service-content">
+                <h3>Orthodontic Treatment</h3>
+                <p>Traditional braces and modern aligner solutions for patients of all ages. Improve alignment, bite, and smile confidence with personalized orthodontic planning.</p>
+            </div>
         </article>
         <article class="service-card">
-            <div class="service-icon"><img src="images/services/service-pediatric.svg" alt="Pediatric Dentistry" /></div>
-            <h3>Pediatric & Family Dentistry</h3>
-            <p>Family-friendly dental care for children and adults, with a warm clinic atmosphere and easy appointment support. Gentle approaches tailored for young patients.</p>
+            <div class="service-image">
+                <img src="images/services/service-pediatric.svg" alt="Pediatric and family dentistry" loading="lazy" />
+            </div>
+            <div class="service-content">
+                <h3>Pediatric & Family Dentistry</h3>
+                <p>Family-friendly dental care for children and adults, with a warm clinic atmosphere and easy appointment support. Gentle approaches tailored for young patients.</p>
+            </div>
         </article>
         <article class="service-card">
-            <div class="service-icon"><img src="images/services/service-rootcanal.svg" alt="Root Canal" /></div>
-            <h3>Root Canal Treatment</h3>
-            <p>Expert endodontic care to save natural teeth from severe decay or infection. Using modern techniques for a comfortable, efficient procedure that preserves your smile.</p>
+            <div class="service-image">
+                <img src="images/services/service-rootcanal.svg" alt="Root canal treatment" loading="lazy" />
+            </div>
+            <div class="service-content">
+                <h3>Root Canal Treatment</h3>
+                <p>Expert endodontic care to save natural teeth from severe decay or infection. Using modern techniques for a comfortable, efficient procedure that preserves your smile.</p>
+            </div>
         </article>
         <article class="service-card">
-            <div class="service-icon"><img src="images/services/service-implants.svg" alt="Dental Implants" /></div>
-            <h3>Dental Implants</h3>
-            <p>Permanent tooth replacement options that look, feel, and function like natural teeth. Includes bone graft support for ideal implant stability and long-term success.</p>
+            <div class="service-image">
+                <img src="images/services/service-implants.svg" alt="Dental implants - permanent tooth replacement" loading="lazy" />
+            </div>
+            <div class="service-content">
+                <h3>Dental Implants</h3>
+                <p>Permanent tooth replacement options that look, feel, and function like natural teeth. Includes bone graft support for ideal implant stability and long-term success.</p>
+            </div>
         </article>
         <article class="service-card">
-            <div class="service-icon"><img src="images/services/service-periodontal.svg" alt="Periodontal Care" /></div>
-            <h3>Periodontal Care</h3>
-            <p>Deep scaling, root planing, and gum disease treatment to protect the foundation of your smile. Preventive periodontal therapy for healthy gums and lasting oral health.</p>
+            <div class="service-image">
+                <img src="images/services/service-periodontal.svg" alt="Periodontal care - gum health treatment" loading="lazy" />
+            </div>
+            <div class="service-content">
+                <h3>Periodontal Care</h3>
+                <p>Deep scaling, root planing, and gum disease treatment to protect the foundation of your smile. Preventive periodontal therapy for healthy gums and lasting oral health.</p>
+            </div>
         </article>
     </section>
 

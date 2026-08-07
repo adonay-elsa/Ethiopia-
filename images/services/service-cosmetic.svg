@@ -1,5 +1,15 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52 52">
-  <rect width="52" height="52" rx="12" fill="#EAF6FF"/>
-  <path d="M26 16 L28 22 L34 22 L29 26 L31 32 L26 28 L21 32 L23 26 L18 22 L24 22 Z" fill="#2F80ED"/>
-  <circle cx="38" cy="14" r="3" fill="#36C35D"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300">
+  <defs>
+    <linearGradient id="bg2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#EAF6FF"/>
+      <stop offset="100%" style="stop-color:#d0e8f7"/>
+    </linearGradient>
+  </defs>
+  <rect width="400" height="300" fill="url(#bg2)" rx="16"/>
+  <rect x="40" y="40" width="320" height="220" fill="#fff" rx="12" stroke="#2F80ED" stroke-width="2"/>
+  <ellipse cx="200" cy="130" rx="60" ry="40" fill="#EAF6FF" stroke="#2F80ED" stroke-width="2"/>
+  <path d="M160 130 Q200 90 240 130" fill="none" stroke="#2F80ED" stroke-width="3"/>
+  <circle cx="200" cy="115" r="15" fill="#fff" stroke="#36C35D" stroke-width="2"/>
+  <text x="200" y="220" text-anchor="middle" fill="#1F2937" font-family="Arial" font-size="16" font-weight="600">Cosmetic Dentistry</text>
+  <text x="200" y="245" text-anchor="middle" fill="#4B5563" font-family="Arial" font-size="12">Whitening & Smile Design</text>
 </svg>

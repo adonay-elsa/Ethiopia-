@@ -3,8 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dental Clinic Ethiopia - Premium Dental Care</title>
-    <link rel="icon" href="favicon.svg" />
+    <title>Peacock Dental Clinic - Premium Dental Care in Ethiopia</title>
+    <link rel="icon" type="image/png" href="images/logo.png" />
+    <link rel="apple-touch-icon" href="images/logo.png" />
+    <meta property="og:image" content="https://peacockdentalclinic.netlify.app/images/logo.png" />
+    <meta property="og:image:type" content="image/png" />
+    <meta property="og:image:width" content="512" />
+    <meta property="og:image:height" content="512" />
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Dentist",
+      "name": "Peacock Dental Clinic",
+      "url": "https://peacockdentalclinic.netlify.app",
+      "logo": "https://peacockdentalclinic.netlify.app/images/logo.png"
+    }
+    </script>
     <style>
         * {
             margin: 0;
@@ -29,6 +43,13 @@
             --green: #36C35D;
             --green-light: #e8f8f0;
             --green-dark: #2ab553;
+            --red: #E53E3E;
+            --red-light: #FFF5F5;
+            --red-dark: #C53030;
+            --orange: #ED8936;
+            --orange-light: #FFFBD5;
+            --purple: #805AD5;
+            --purple-light: #FAF5FF;
         }
 
         html,
@@ -600,7 +621,7 @@
 
         .direct-reach-section {
             padding: 3rem 5%;
-            background: linear-gradient(180deg, var(--primary-light) 0%, var(--white) 100%);
+            background: linear-gradient(180deg, var(--green-light) 0%, var(--primary-light) 50%, var(--white) 100%);
         }
 
         .direct-reach-card {
@@ -629,7 +650,7 @@
 
         .reach-title {
             font-size: clamp(1.5rem, 3vw, 2rem);
-            color: var(--primary);
+            color: var(--red);
             font-weight: 700;
             margin-bottom: 0.5rem;
             position: relative;
@@ -637,7 +658,7 @@
 
         .reach-subtitle {
             font-size: 1.25rem;
-            color: var(--text-primary);
+            color: var(--green-dark);
             font-weight: 600;
             margin-bottom: 0.75rem;
             position: relative;
@@ -748,7 +769,7 @@
 
         .reviews-header h2 {
             font-size: clamp(1.6rem, 3vw, 2.25rem);
-            color: var(--primary);
+            color: var(--red);
             font-weight: 700;
             margin-bottom: 0.5rem;
         }
@@ -775,7 +796,8 @@
 
         .review-card:hover {
             transform: translateY(-4px);
-            box-shadow: 0 12px 30px rgba(47,128,237,0.15);
+            box-shadow: 0 12px 30px rgba(54,195,93,0.18);
+            border-color: var(--green);
         }
 
         .review-stars {
@@ -1144,7 +1166,8 @@
         <div class="meta">
             <span class="contact-badge">✦ Meet Our Doctor</span>
             <h3 id="doctor-preview-title">Meet Our Distinguished Head Dentist</h3>
-            <p>Dr. Samuel Siyoum leads Peacock Dental Ethiopia with clinical excellence, compassion, and modern techniques focused on long-term oral health.</p>
+            <p>Dr. Samuel Siyoum leads Peacock Dental Clinic with clinical excellence, compassion, and modern techniques focused on long-term oral health.</p>
+            <p style="margin-top:0.6rem; color: var(--green-dark); font-weight:600;">🏆 15+ Years of Experience &nbsp;|&nbsp; 🎓 Addis Ababa University Graduate</p>
             <p style="margin-top:1rem"><a href="our-doctor.html" class="btn btn-secondary small">Learn More About Dr. Samuel Siyoum</a></p>
         </div>
         <div class="portrait" style="max-width:340px">
@@ -1204,7 +1227,7 @@
     <section class="homepage-contact" aria-label="Contact preview">
         <div class="left">
             <h3 style="margin:0;color:var(--text-dark)">Contact & Location</h3>
-            <p style="margin:0.4rem 0;color:var(--text-secondary)">Peacock Dental Ethiopia — Asosa. For appointments and inquiries, call or email us.</p>
+            <p style="margin:0.4rem 0;color:var(--text-secondary)">Peacock Dental Clinic — Asosa. For appointments and inquiries, call or email us.</p>
         </div>
         <div class="actions">
             <a href="tel:0981555000" class="btn btn-primary">Call</a>

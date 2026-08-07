@@ -1,7 +1,15 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52 52">
-  <rect width="52" height="52" rx="12" fill="#EAF6FF"/>
-  <path d="M26 14 L26 28 M22 20 L30 20" stroke="#2F80ED" stroke-width="2.5" stroke-linecap="round"/>
-  <path d="M22 28 Q22 36 26 36 Q30 36 30 28" fill="none" stroke="#36C35D" stroke-width="2.5"/>
-  <path d="M26 36 L26 40" stroke="#1F2937" stroke-width="2" stroke-linecap="round"/>
-  <circle cx="26" cy="42" r="2" fill="#1F2937"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300">
+  <defs>
+    <linearGradient id="bg7" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#EAF6FF"/>
+      <stop offset="100%" style="stop-color:#d0e8f7"/>
+    </linearGradient>
+  </defs>
+  <rect width="400" height="300" fill="url(#bg7)" rx="16"/>
+  <rect x="40" y="40" width="320" height="220" fill="#fff" rx="12" stroke="#2F80ED" stroke-width="2"/>
+  <rect x="170" y="100" width="60" height="80" fill="#EAF6FF" stroke="#2F80ED" stroke-width="2"/>
+  <path d="M185 100 L185 70 M215 100 L215 70" stroke="#2F80ED" stroke-width="2"/>
+  <path d="M180 180 L220 180" stroke="#36C35D" stroke-width="3"/>
+  <text x="200" y="220" text-anchor="middle" fill="#1F2937" font-family="Arial" font-size="16" font-weight="600">Root Canal Treatment</text>
+  <text x="200" y="245" text-anchor="middle" fill="#4B5563" font-family="Arial" font-size="12">Endodontic Care</text>
 </svg>

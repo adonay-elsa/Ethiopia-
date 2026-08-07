@@ -3,8 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Oral Health Awareness - Dental Clinic Ethiopia</title>
-    <link rel="icon" href="favicon.svg" />
+    <title>Oral Health Awareness - Peacock Dental Clinic</title>
+    <link rel="icon" type="image/png" href="images/logo.png" />
+    <link rel="apple-touch-icon" href="images/logo.png" />
+    <meta property="og:image" content="https://peacockdentalclinic.netlify.app/images/logo.png" />
+    <meta property="og:image:type" content="image/png" />
+    <meta property="og:image:width" content="512" />
+    <meta property="og:image:height" content="512" />
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Dentist",
+      "name": "Peacock Dental Clinic",
+      "url": "https://peacockdentalclinic.netlify.app",
+      "logo": "https://peacockdentalclinic.netlify.app/images/logo.png"
+    }
+    </script>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
 
@@ -27,6 +41,13 @@
             --green: #36C35D;
             --green-light: #e8f8f0;
             --green-dark: #2ab553;
+            --red: #E53E3E;
+            --red-light: #FFF5F5;
+            --red-dark: #C53030;
+            --orange: #ED8936;
+            --orange-light: #FFFBD5;
+            --purple: #805AD5;
+            --purple-light: #FAF5FF;
         }
 
         html,
@@ -148,6 +169,30 @@
             letter-spacing: 0.5px;
             margin-bottom: 1.25rem;
             border: 1px solid var(--border);
+        }
+
+        .badge.accent-red {
+            background: var(--red-light);
+            color: var(--red-dark);
+            border-color: var(--red);
+        }
+
+        .badge.accent-green {
+            background: var(--green-light);
+            color: var(--green-dark);
+            border-color: var(--green);
+        }
+
+        .badge.accent-orange {
+            background: var(--orange-light);
+            color: var(--orange);
+            border-color: var(--orange);
+        }
+
+        .badge.accent-purple {
+            background: var(--purple-light);
+            color: var(--purple);
+            border-color: var(--purple);
         }
 
         .section-title {
@@ -470,8 +515,8 @@
         }
 
         .direct-reach-card {
-            background: var(--primary-light);
-            border: 2px solid var(--primary);
+            background: var(--green-light);
+            border: 2px solid var(--green);
             border-radius: 24px;
             padding: 3.5rem 3rem;
             text-align: center;
@@ -492,7 +537,7 @@
 
         .reach-title {
             font-size: clamp(1.5rem, 3vw, 2rem);
-            color: var(--dark-blue);
+            color: var(--red);
             font-weight: 700;
             margin-bottom: 0.5rem;
             position: relative;
@@ -500,7 +545,7 @@
 
         .reach-subtitle {
             font-size: 1.25rem;
-            color: var(--dark-blue);
+            color: var(--green-dark);
             font-weight: 600;
             margin-bottom: 0.75rem;
             position: relative;
@@ -703,9 +748,9 @@
     <div class="awareness-page">
         
         <section class="section">
-            <div class="section-header animate-on-scroll">
-                <span class="badge">✦ Patient Education & Awareness</span>
-                <h1 class="section-title">Understanding Your Smile:<br>Prevention Begins With Awareness</h1>
+        <div class="section-header animate-on-scroll">
+            <span class="badge accent-red">✦ Patient Education & Awareness</span>
+            <h1 class="section-title">Understanding Your Smile:<br>Prevention Begins With Awareness</h1>
                 <p class="section-subtitle">
                     Many dental conditions—like early tooth decay—develop silently. With regular checkups, timely intervention, and proper habits, you can protect your natural teeth and smile with total confidence.
                 </p>
@@ -756,9 +801,9 @@
 
         
         <section class="section">
-            <div class="section-header animate-on-scroll">
-                <span class="badge">✦ Prevention First</span>
-                <h2 class="section-title">Three Pillars of Preventive Care</h2>
+        <div class="section-header animate-on-scroll">
+            <span class="badge accent-green">✦ Prevention First</span>
+            <h2 class="section-title">Three Pillars of Preventive Care</h2>
                 <p class="section-subtitle">Building a lifetime of healthy smiles starts with these fundamental practices.</p>
             </div>
 
