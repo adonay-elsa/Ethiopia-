@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 640" role="img" aria-label="Dental clinic interior illustration">
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#eef8ff" />
+      <stop offset="100%" stop-color="#d8edff" />
+    </linearGradient>
+    <linearGradient id="floor" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#f8fbff" />
+      <stop offset="100%" stop-color="#dbeaf4" />
+    </linearGradient>
+    <linearGradient id="chair" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#5bbef7" />
+      <stop offset="100%" stop-color="#1b4f8c" />
+    </linearGradient>
+    <linearGradient id="accent" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#93d9df" />
+      <stop offset="100%" stop-color="#26a6b5" />
+    </linearGradient>
+  </defs>
+  <rect width="960" height="640" rx="40" fill="url(#sky)" />
+  <rect x="0" y="520" width="960" height="120" fill="url(#floor)" />
+  <rect x="120" y="150" width="580" height="270" rx="24" fill="#ffffff" opacity="0.94" />
+  <path d="M170 420 C190 370 240 340 290 340 H480 C530 340 580 370 600 420" fill="#e5f1fb" />
+  <path d="M260 250 C260 220 295 190 330 190 H470 C505 190 540 220 540 250 V310 C540 310 520 320 505 310 C475 290 370 290 320 310 C305 320 285 310 285 310 V250 Z" fill="url(#chair)" />
+  <path d="M330 190 C330 165 350 150 370 150 H430 C450 150 470 165 470 190 V210 H330 V190 Z" fill="#dff5ff" />
+  <path d="M240 260 L240 280 L540 280 L540 260 Z" fill="#d4e8f6" />
+  <path d="M260 340 C260 310 290 290 330 290 H430 C470 290 500 310 500 340 V360 H260 V340 Z" fill="url(#accent)" />
+  <path d="M255 360 C255 345 265 335 280 330 H450 C465 335 475 345 475 360 V380 H255 V360 Z" fill="#f1f8ff" />
+  <circle cx="330" cy="285" r="12" fill="#ffffff" opacity="0.7" />
+  <circle cx="430" cy="285" r="12" fill="#ffffff" opacity="0.7" />
+  <path d="M80 120 C80 90 110 70 140 75 L220 95 C250 100 270 125 270 155 V250 C270 280 235 305 200 295 C175 288 160 255 160 225 V125 C160 120 155 115 150 115 C140 115 130 120 130 130 V170 L190 195" fill="#ffffff" opacity="0.94" />
+  <path d="M140 150 C140 130 160 120 180 125" stroke="#5bbef7" stroke-width="10" fill="none" stroke-linecap="round" />
+  <path d="M160 180 C170 165 195 165 205 180" stroke="#5bbef7" stroke-width="10" fill="none" stroke-linecap="round" />
+  <circle cx="160" cy="155" r="8" fill="#1b4f8c" />
+  <rect x="720" y="130" width="140" height="90" rx="18" fill="#ffffff" opacity="0.94" />
+  <rect x="740" y="150" width="100" height="20" rx="10" fill="#d4e8f6" />
+  <rect x="740" y="190" width="72" height="10" rx="5" fill="#c6def1" />
+  <rect x="740" y="210" width="100" height="10" rx="5" fill="#c6def1" />
+  <path d="M720 290 C720 260 760 240 800 240 H860 C900 240 940 260 940 290 V340 H720 V290 Z" fill="#eef8ff" />
+  <path d="M760 290 C760 270 780 262 800 262 H860 C880 262 900 270 900 290 V320 H760 V290 Z" fill="#d4e8f6" />
+  <path d="M740 435 C740 410 760 390 790 390 H830 C860 390 880 410 880 435 V470 H740 V435 Z" fill="#ffffff" />
+  <path d="M250 480 C230 490 220 520 220 540 H320 C320 520 310 490 290 480 C270 470 240 470 250 480 Z" fill="#d4e8f6" />
+  <path d="M320 540 H360 C370 540 380 530 380 520 V500 H300 V520 C300 530 310 540 320 540 Z" fill="#1b4f8c" opacity="0.7" />
+</svg>
